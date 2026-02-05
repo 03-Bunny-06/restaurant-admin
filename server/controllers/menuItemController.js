@@ -113,7 +113,6 @@ const createMenuItem = async(req, res) => {
     const price = req.body.price;
     const ingredients = req.body.ingredients;
     const preparationTime = req.body.preparationTime;
-    const timeStamps = req.body.timestamps;
     try{
         const itemExists = await Menu.findOne({
             name,
@@ -126,8 +125,7 @@ const createMenuItem = async(req, res) => {
                 category,
                 price,
                 ingredients,
-                preparationTime,
-                timeStamps
+                preparationTime
             })
             //201 - Created
             res.status(201).json({
@@ -145,6 +143,48 @@ const createMenuItem = async(req, res) => {
     catch(er){
         res.status(500).json({
             error: er.message
+        })
+    }
+}
+
+const updateMenuItem = async(req, res) => {
+    const menuItemId = req.params.id;
+
+    const isValid = mongoose.isValidObjectId(menuItemId);
+
+    if(!isValid){
+        res.status(404).json({
+            msg: "Invalid MenuID (or) MenuID not found!"
+        })
+    }
+
+    try{
+        const name = req.body.name;
+        const description = req.body.description;
+        const category = req.body.category;
+        const price = req.body.price;
+        const ingredients = req.body.ingredients;
+        const preparationTime = req.body.preparationTime;
+
+        const data = {
+            name,
+            description,
+            category,
+            price,
+            ingredients,
+            preparationTime
+        }
+
+        console.log(data);
+
+        const updatedMenuItem = await Menu.findByIdAndUpdate(menuItemId, {$set: data}, {new: true, runValidators: true})
+        res.status(201).json({
+            msg: `Updated the menu item with ID: ${menuItemId}`
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
         })
     }
 }
@@ -178,5 +218,6 @@ module.exports = {
     searchMenuItems,
     getMenuItemById,
     createMenuItem,
+    updateMenuItem,
     deleteMenuItem
 };
