@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Menu = require("../models/menuItemModel");
 
 const getMenuItems = async(req, res) => {
@@ -49,11 +50,36 @@ const getMenuItems = async(req, res) => {
 
     }
     catch(e){
-        res.status(400).json({
+        res.status(500).json({
             msg: e.message
         })
     }
 };
+
+const getMenuItemById = async(req, res) => {
+    const menuItemId = req.params.id;
+    const isValid = mongoose.isValidObjectId(menuItemId);
+
+    if(!isValid){
+        res.status(404).json({
+            msg: "Invalid MenuID (or) MenuID not found!"
+        })
+    }
+
+    try{
+        const menuItemData = await Menu.findById(menuItemId);
+
+        res.status(200).json({
+            msg: "Menu item found!",
+            menuData: menuItemData
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            msg: e.message
+        })
+    }
+}
 
 const createMenuItem = async(req, res) => {
     const name = req.body.name;
@@ -92,7 +118,7 @@ const createMenuItem = async(req, res) => {
         }
     }
     catch(er){
-        res.status(400).json({
+        res.status(500).json({
             error: er.message
         })
     }
@@ -100,5 +126,6 @@ const createMenuItem = async(req, res) => {
 
 module.exports = {
     getMenuItems,
+    getMenuItemById,
     createMenuItem
 };
