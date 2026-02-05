@@ -56,6 +56,31 @@ const getMenuItems = async(req, res) => {
     }
 };
 
+const searchMenuItems = async(req, res) => {
+    const search = req.query.q;
+
+    try{
+        const textSearchData = await Menu.find({ $text: { $search: search } });
+
+        if(textSearchData.length > 1){
+            res.status(200).json({
+                msg: `Searched for the query: ${search}`,
+                searchedData: textSearchData
+            })
+        }
+        else{
+            res.status(404).json({
+                searchedData: `No data found for the query: ${search}`
+            })
+        }
+    }
+    catch(e){
+        res.status(500).json({
+            msg: e.message
+        })
+    }
+}
+
 const getMenuItemById = async(req, res) => {
     const menuItemId = req.params.id;
     const isValid = mongoose.isValidObjectId(menuItemId);
@@ -126,6 +151,7 @@ const createMenuItem = async(req, res) => {
 
 module.exports = {
     getMenuItems,
+    searchMenuItems,
     getMenuItemById,
     createMenuItem
 };
