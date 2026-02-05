@@ -51,7 +51,7 @@ const getMenuItems = async(req, res) => {
     }
     catch(e){
         res.status(500).json({
-            msg: e.message
+            error: e.message
         })
     }
 };
@@ -76,7 +76,7 @@ const searchMenuItems = async(req, res) => {
     }
     catch(e){
         res.status(500).json({
-            msg: e.message
+            error: e.message
         })
     }
 }
@@ -101,7 +101,7 @@ const getMenuItemById = async(req, res) => {
     }
     catch(e){
         res.status(500).json({
-            msg: e.message
+            error: e.message
         })
     }
 }
@@ -149,9 +149,34 @@ const createMenuItem = async(req, res) => {
     }
 }
 
+const deleteMenuItem = async(req, res) => {
+    const menuItemId = req.params.id;
+    const isValid = mongoose.isValidObjectId(menuItemId);
+
+    if(!isValid){
+        res.status(404).json({
+            msg: "Invalid MenuID (or) MenuID not found!"
+        })
+    }
+
+    try{
+        const menuItemData = await Menu.findByIdAndDelete(menuItemId);
+
+        res.status(200).json({
+            msg: `Deleted the menu item with ID: ${menuItemId}`
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
+
 module.exports = {
     getMenuItems,
     searchMenuItems,
     getMenuItemById,
-    createMenuItem
+    createMenuItem,
+    deleteMenuItem
 };
