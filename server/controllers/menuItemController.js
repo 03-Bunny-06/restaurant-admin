@@ -3,11 +3,11 @@ const Menu = require("../models/menuItemModel");
 
 const getMenuItems = async(req, res) => {
     const category = req.query.category;
-    const avaliablity = req.query.avaliablity;
+    const availability = req.query.availability;
     const price = req.query.price;
 
     try{
-        const hasFilters = !!(category || avaliablity || price)
+        const hasFilters = !!(category || availability || price)
         console.log(hasFilters);
 
         let query = Menu.find();
@@ -19,8 +19,8 @@ const getMenuItems = async(req, res) => {
                 filtersData.category = category;
             }
 
-            if (avaliablity){
-                filtersData.isAvailable = avaliablity === 'true'
+            if (availability){
+                filtersData.isAvailable = (availability === 'true')
             }
 
             if(price){
@@ -213,11 +213,46 @@ const deleteMenuItem = async(req, res) => {
     }
 }
 
+const toggleAvailabilityStatus = async(req, res) => {
+    const menuItemId = req.params.id;
+
+    const isValid = mongoose.isValidObjectId(menuItemId);
+
+    if(!isValid){
+        res.status(404).json({
+            msg: "Invalid MenuID (or) MenuID not found!"
+        })
+    }
+
+    try{
+        const menuItem = await Menu.findById(menuItemId);
+
+        if(menuItem === null){
+            res.status(404).json({
+                msg: `MenuItem not found with the ID: ${menuItemId}`
+            })
+        }
+
+        menuItem.isAvailable = !menuItem.isAvailable;
+        await menuItem.save();
+
+        res.status(200).json({
+            msg: "MenuItem availability toggled successfully!"
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
+
 module.exports = {
     getMenuItems,
     searchMenuItems,
     getMenuItemById,
     createMenuItem,
     updateMenuItem,
-    deleteMenuItem
+    deleteMenuItem,
+    toggleAvailabilityStatus
 };
