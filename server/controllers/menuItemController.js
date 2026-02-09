@@ -86,7 +86,7 @@ const getMenuItemById = async(req, res) => {
     const isValid = mongoose.isValidObjectId(menuItemId);
 
     if(!isValid){
-        res.status(404).json({
+        return res.status(404).json({
             msg: "Invalid MenuID (or) MenuID not found!"
         })
     }
@@ -194,7 +194,7 @@ const deleteMenuItem = async(req, res) => {
     const isValid = mongoose.isValidObjectId(menuItemId);
 
     if(!isValid){
-        res.status(404).json({
+        return res.status(404).json({
             msg: "Invalid MenuID (or) MenuID not found!"
         })
     }
@@ -219,7 +219,7 @@ const toggleAvailabilityStatus = async(req, res) => {
     const isValid = mongoose.isValidObjectId(menuItemId);
 
     if(!isValid){
-        res.status(404).json({
+        return res.status(404).json({
             msg: "Invalid MenuID (or) MenuID not found!"
         })
     }

@@ -1,12 +1,13 @@
-const { default: mongoose } = require("mongoose");
-const { v4: uuidv4 } = require("uuid");
+const mongoose = require("mongoose");
+const { customAlphabet } = require("nanoid");
+const nanoid = customAlphabet('1234567890', 6);
 
 const orderSchema = new mongoose.Schema({
     orderNumber: {
         type: String,
         immutable: true,
         unique: true,
-        default: () => `ORD-$${uuidv4()}`
+        default: () => `ORD-${nanoid()}`
     },
     items: [
         {
@@ -14,18 +15,36 @@ const orderSchema = new mongoose.Schema({
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'menu',
             },
-            quantity: Number,
-            price: Number
+            quantity: {
+                type: Number,
+                required: true
+            },
+            price: {
+                type: Number,
+                required: true
+            }
         }
     ],
-    totalAmount: Number,
+    totalAmount: {
+        type: Number,
+        required: true
+    },
     status: {
         type: String,
         enum: ['Pending', 'Preparing', 'Ready', 'Delivered', 'Cancelled']
     },
-    customerName: String,
-    tableNumber: Number
-}, {timestamps: true})
+    customerName: {
+        type: String,
+        required: true
+    },
+    tableNumber: {
+        type: Number,
+        required: true
+    }
+    }, 
+    {
+        timestamps: true
+})
 
 const Order = mongoose.model('Order', orderSchema);
 

@@ -12,7 +12,7 @@ connectDb();
 
 app.use(bodyParser.json());
 app.use('/menu', menuRouter);
-//app.use('/order', orderRouter);
+app.use('/orders', orderRouter);
 
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
