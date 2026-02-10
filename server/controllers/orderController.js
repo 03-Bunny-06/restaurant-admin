@@ -44,4 +44,68 @@ const createOrderItem = async(req, res) => {
     }
 };
 
-module.exports = createOrderItem;
+const getOrderItems = async(req, res) => {
+    let page = req.query.page;
+    let limit = req.query.limit;
+    let status = req.query.status;
+
+    const hasFilters = !!(page || limit || status);
+    console.log(hasFilters);
+
+    let pageNum, limitNum, totalOrders, totalPages;
+
+    try{
+        filter = {}
+
+        const hasPagination = !!(page || limit);
+        const hasFilter = typeof(status) === "string";
+
+        if(hasFilter){
+            filter.status = status;
+        }
+
+        query = Order.find(filter);
+
+        if(hasPagination){
+            pageNum = Math.max(1, Number(page));
+            limitNum = Math.max(5, Number(limit));
+
+            totalOrders = await Order.countDocuments({});
+            totalPages = Math.ceil(totalOrders/limitNum);
+
+            const skipNum = (pageNum - 1) * limitNum;
+
+            if(pageNum > totalPages && totalOrders > 0){
+                return res.status(404).json({
+                    msg: "Page does not exist!"
+                })
+            }
+
+            query.skip(skipNum).limit(limitNum)
+        }
+
+        const data = await query;
+
+        res.status(200).json({
+            hasFilter: hasFilter,
+            hasPagination: hasPagination,
+            totalOrders: totalOrders,
+            ...(hasPagination && {
+                totalPages: totalPages,
+                currentPage: pageNum,
+                limit: limitNum
+            }),
+            data: data
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
+
+module.exports = {
+    createOrderItem,
+    getOrderItems
+};
