@@ -135,8 +135,44 @@ const getOrderItemById = async(req, res) => {
     }
 }
 
+const changeOrderStatus = async(req, res) => {
+    const orderId = req.params.id;
+    const status = req.body.status;
+    const isValid = mongoose.isValidObjectId(orderId);
+
+    if(!isValid){
+        return res.status(404).json({
+            msg: "Invalid Order ID (or) Order ID not found!"
+        })
+    }
+    
+    try{
+        const allowedStatuses = ['Pending', 'Preparing', 'Ready', 'Delivered', 'Cancelled'];
+        const isValidStaus = allowedStatuses.includes(status);
+
+        if(!isValidStaus){
+            return res.status(404).json({
+                msg: "Invalid status sent in body!"
+            })
+        }
+
+        const updateOrderStatus = await Order.findByIdAndUpdate(orderId, {$set: {status}}, {new: true})
+
+        res.status(200).json({
+            msg: "Updated Order status successfully!",
+            data: updateOrderStatus
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
+
 module.exports = {
     getOrderItems,
     getOrderItemById,
-    createOrderItem
+    createOrderItem,
+    changeOrderStatus
 };
