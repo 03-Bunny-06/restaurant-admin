@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const Order = require("../models/orderModel");
-const Menu = require("../models/menuItemModel");
 
 const createOrderItem = async(req, res) => {
     const items = req.body.items;
@@ -105,7 +104,39 @@ const getOrderItems = async(req, res) => {
     }
 }
 
+const getOrderItemById = async(req, res) => {
+    const orderId = req.params.id;
+    const isValid = mongoose.isValidObjectId(orderId);
+
+    if(!isValid){
+        return res.status(404).json({
+            msg: "Invalid Order ID (or) Order ID not found!"
+        })
+    }
+
+    try{
+        const orderDetails = await Order.findById(orderId).populate("items.menuItem");
+
+        if(!orderDetails){
+            return res.status(404).json({
+                msg: "Order item not found!"
+            })
+        }
+
+        res.status(200).json({
+            msg: "Order item found successfully!",
+            orderDetails: orderDetails
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
+
 module.exports = {
-    createOrderItem,
-    getOrderItems
+    getOrderItems,
+    getOrderItemById,
+    createOrderItem
 };
