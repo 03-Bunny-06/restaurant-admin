@@ -14,6 +14,12 @@ app.use(bodyParser.json());
 app.use('/menu', menuRouter);
 app.use('/orders', orderRouter);
 
+app.use(async(req, res) => {
+    res.status(404).json({
+        msg: "Bad route (or) No route found"
+    })
+})
+
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log("Port started at: " + PORT);
