@@ -2,7 +2,8 @@ const env = require("dotenv");
 env.config({path: "./.env"});
 
 const express = require("express");
-const swaggerUi = require("swagger-ui-express");
+// const swaggerUi = require("swagger-ui-express");
+// const path = require("path");
 const app = express();
 const bodyParser = require("body-parser");
 const menuRouter = require("./routes/menuRoutes.js");
@@ -11,13 +12,17 @@ const orderRouter = require("./routes/orderRoutes");
 const connectDb = require("./config/db.js");
 connectDb();
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(null, {
-    url: "/openapi.yaml"
-}))
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(null, 
+//   {
+//     swaggerOptions: {
+//       url: "/openapi.yaml"
+//     } 
+//   })
+// );
 
-app.get("./openapi.yaml", (req, res) => {
-    res.sendFile(path.join(__dirname, "openapi.yaml"))
-})
+// app.get("./openapi.yaml", (req, res) => {
+//     res.sendFile(path.join(__dirname, "openapi.yaml"))
+// })
 
 app.use(bodyParser.json());
 app.use('/menu', menuRouter);
