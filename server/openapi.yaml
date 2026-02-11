@@ -1,0 +1,2866 @@
+openapi: 3.0.0
+info:
+  title: Restaurant Admin API Documentation
+  version: 1.0.0
+  description: | 
+      A robust RESTful backend service for managing restaurant menus and orders with CRUD, search, availability control, and status-tracked order handling.
+
+      🚀 **Features**: 
+        - **Menu Management:** Create, read, update, and delete (CRUD) menu items.
+        - **Search & Filters:** Support searching menus and filtering based on fields like category or availability. 
+        - **Order Handling:** Accept new orders, track statuses (e.g., Pending, Completed), and update order flows.
+        - **Pagination & Availability:** Built-in pagination for efficient data querying and menu item availability toggling. 
+      
+      🛠 **Tech Stack**: 
+        - **Node.js:** JavaScript runtime for server-side logic. 
+        - **Express.js:** Lightweight REST API framework handling routing and HTTP requests.
+        - **MongoDB:** NoSQL database for scalable data storage.
+        - **Swagger (OpenAPI):** API documentation support for interactive endpoint testing.
+  contact: 
+    name: Sai Kowshik 
+    email: saikowshik0306@gmail.com 
+    url: https://github.com/03-Bunny-06/restaurant-admin
+servers:
+  - url: https://api-restaurant-admin.onrender.com
+tags:
+  - name: Menu
+  - name: Order
+  - name: Non-Existing Routes
+paths:
+  /menu:
+    get:
+      tags:
+        - Menu
+      summary: Get Menu Items (with Filtering)
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+          example: Appetizer
+        - name: availability
+          in: query
+          schema:
+            type: boolean
+          example: 'true'
+        - name: price
+          in: query
+          schema:
+            type: integer
+          example: '110'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2303'
+            ETag:
+              schema:
+                type: string
+                example: W/"8ff-/fYP7g8iSEYScaMI7cyh3kxXRuI"
+            Date:
+              schema:
+                type: string
+                example: Wed, 04 Feb 2026 16:20:27 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Successful Response (with Category Filter)
+                  value: |-
+                    {
+                        "filteredData": true,
+                        "totalMenuItems": 5,
+                        "data": [
+                            {
+                                "_id": "6981bd73cd6c6400e2377063",
+                                "name": "Chicken Noodles",
+                                "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                                "category": "Appetizer",
+                                "price": 120,
+                                "ingredients": [
+                                    "chicken",
+                                    "noodles",
+                                    "salt",
+                                    "tomato sauce",
+                                    "pepper"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:18:43.926Z",
+                                "updatedAt": "2026-02-03T09:18:43.926Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdbecd6c6400e2377066",
+                                "name": "Veg Spring Rolls",
+                                "description": "Crispy rolls stuffed with seasoned mixed vegetables.",
+                                "category": "Appetizer",
+                                "price": 90,
+                                "ingredients": [
+                                    "cabbage",
+                                    "carrot",
+                                    "spring roll sheets",
+                                    "salt",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 12,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:19:58.702Z",
+                                "updatedAt": "2026-02-03T09:19:58.702Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdebcd6c6400e2377069",
+                                "name": "Paneer Tikka",
+                                "description": "Grilled paneer cubes marinated in yogurt and spices.",
+                                "category": "Appetizer",
+                                "price": 160,
+                                "ingredients": [
+                                    "paneer",
+                                    "curd",
+                                    "spices",
+                                    "capsicum",
+                                    "onion"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:20:43.519Z",
+                                "updatedAt": "2026-02-03T09:20:43.519Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdf7cd6c6400e237706c",
+                                "name": "Garlic Bread",
+                                "description": "Toasted bread topped with garlic butter and melted cheese.",
+                                "category": "Appetizer",
+                                "price": 80,
+                                "ingredients": [
+                                    "bread",
+                                    "butter",
+                                    "garlic",
+                                    "cheese"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 8,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:20:55.395Z",
+                                "updatedAt": "2026-02-03T09:20:55.395Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be00cd6c6400e237706f",
+                                "name": "Chicken Soup",
+                                "description": "Hot and comforting soup made with chicken and mild spices.",
+                                "category": "Appetizer",
+                                "price": 100,
+                                "ingredients": [
+                                    "chicken",
+                                    "water",
+                                    "salt",
+                                    "pepper",
+                                    "ginger"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 18,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:04.223Z",
+                                "updatedAt": "2026-02-03T09:21:04.223Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-1:
+                  summary: Successful Response (with Avaliablity Filter)
+                  value: |-
+                    {
+                        "filteredData": true,
+                        "totalMenuItems": 25,
+                        "data": [
+                            {
+                                "_id": "6981bd73cd6c6400e2377063",
+                                "name": "Chicken Noodles",
+                                "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                                "category": "Appetizer",
+                                "price": 120,
+                                "ingredients": [
+                                    "chicken",
+                                    "noodles",
+                                    "salt",
+                                    "tomato sauce",
+                                    "pepper"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:18:43.926Z",
+                                "updatedAt": "2026-02-03T09:18:43.926Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdbecd6c6400e2377066",
+                                "name": "Veg Spring Rolls",
+                                "description": "Crispy rolls stuffed with seasoned mixed vegetables.",
+                                "category": "Appetizer",
+                                "price": 90,
+                                "ingredients": [
+                                    "cabbage",
+                                    "carrot",
+                                    "spring roll sheets",
+                                    "salt",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 12,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:19:58.702Z",
+                                "updatedAt": "2026-02-03T09:19:58.702Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdebcd6c6400e2377069",
+                                "name": "Paneer Tikka",
+                                "description": "Grilled paneer cubes marinated in yogurt and spices.",
+                                "category": "Appetizer",
+                                "price": 160,
+                                "ingredients": [
+                                    "paneer",
+                                    "curd",
+                                    "spices",
+                                    "capsicum",
+                                    "onion"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:20:43.519Z",
+                                "updatedAt": "2026-02-03T09:20:43.519Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdf7cd6c6400e237706c",
+                                "name": "Garlic Bread",
+                                "description": "Toasted bread topped with garlic butter and melted cheese.",
+                                "category": "Appetizer",
+                                "price": 80,
+                                "ingredients": [
+                                    "bread",
+                                    "butter",
+                                    "garlic",
+                                    "cheese"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 8,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:20:55.395Z",
+                                "updatedAt": "2026-02-03T09:20:55.395Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be00cd6c6400e237706f",
+                                "name": "Chicken Soup",
+                                "description": "Hot and comforting soup made with chicken and mild spices.",
+                                "category": "Appetizer",
+                                "price": 100,
+                                "ingredients": [
+                                    "chicken",
+                                    "water",
+                                    "salt",
+                                    "pepper",
+                                    "ginger"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 18,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:04.223Z",
+                                "updatedAt": "2026-02-03T09:21:04.223Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be10cd6c6400e2377072",
+                                "name": "Butter Chicken",
+                                "description": "Creamy tomato-based curry with juicy chicken pieces.",
+                                "category": "Main Course",
+                                "price": 280,
+                                "ingredients": [
+                                    "chicken",
+                                    "butter",
+                                    "tomato",
+                                    "cream",
+                                    "spices"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 30,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:20.461Z",
+                                "updatedAt": "2026-02-03T09:21:20.461Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be1bcd6c6400e2377075",
+                                "name": "Veg Biryani",
+                                "description": "Fragrant rice cooked with vegetables and aromatic spices.",
+                                "category": "Main Course",
+                                "price": 180,
+                                "ingredients": [
+                                    "rice",
+                                    "vegetables",
+                                    "spices",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 25,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:31.812Z",
+                                "updatedAt": "2026-02-03T09:21:31.812Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be4fcd6c6400e2377079",
+                                "name": "Chicken Fried Rice",
+                                "description": "Wok-tossed rice with chicken, vegetables, and soy sauce.",
+                                "category": "Main Course",
+                                "price": 220,
+                                "ingredients": [
+                                    "rice",
+                                    "chicken",
+                                    "soy sauce",
+                                    "vegetables",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:23.996Z",
+                                "updatedAt": "2026-02-03T09:22:23.996Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be5dcd6c6400e237707c",
+                                "name": "Paneer Butter Masala",
+                                "description": "Rich and creamy curry made with soft paneer cubes.",
+                                "category": "Main Course",
+                                "price": 240,
+                                "ingredients": [
+                                    "paneer",
+                                    "butter",
+                                    "tomato",
+                                    "cream",
+                                    "spices"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 28,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:37.515Z",
+                                "updatedAt": "2026-02-03T09:22:37.515Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be6dcd6c6400e237707f",
+                                "name": "Veg Pasta",
+                                "description": "Pasta tossed in tangy tomato sauce with fresh vegetables.",
+                                "category": "Main Course",
+                                "price": 200,
+                                "ingredients": [
+                                    "pasta",
+                                    "vegetables",
+                                    "tomato sauce",
+                                    "salt"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 18,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:53.226Z",
+                                "updatedAt": "2026-02-03T09:22:53.226Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be7acd6c6400e2377082",
+                                "name": "Chicken Burger",
+                                "description": "Juicy chicken patty layered in a soft bun with fresh veggies.",
+                                "category": "Main Course",
+                                "price": 190,
+                                "ingredients": [
+                                    "chicken patty",
+                                    "bun",
+                                    "lettuce",
+                                    "cheese",
+                                    "sauce"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:06.144Z",
+                                "updatedAt": "2026-02-03T09:23:06.144Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be86cd6c6400e2377085",
+                                "name": "Mutton Curry",
+                                "description": "Slow-cooked mutton in a rich and spicy gravy.",
+                                "category": "Main Course",
+                                "price": 320,
+                                "ingredients": [
+                                    "mutton",
+                                    "onion",
+                                    "tomato",
+                                    "spices",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 40,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:18.565Z",
+                                "updatedAt": "2026-02-03T09:23:18.565Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be94cd6c6400e2377088",
+                                "name": "Chocolate Cake",
+                                "description": "Soft and moist chocolate-flavored cake.",
+                                "category": "Dessert",
+                                "price": 140,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "sugar",
+                                    "eggs",
+                                    "butter"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 25,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:32.647Z",
+                                "updatedAt": "2026-02-03T09:23:32.647Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bea0cd6c6400e237708b",
+                                "name": "Ice Cream Sundae",
+                                "description": "Vanilla ice cream topped with chocolate syrup and nuts.",
+                                "category": "Dessert",
+                                "price": 130,
+                                "ingredients": [
+                                    "ice cream",
+                                    "chocolate syrup",
+                                    "nuts"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 5,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:44.855Z",
+                                "updatedAt": "2026-02-03T09:23:44.855Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bea9cd6c6400e237708e",
+                                "name": "Gulab Jamun",
+                                "description": "Soft milk-solid dumplings soaked in sugar syrup.",
+                                "category": "Dessert",
+                                "price": 90,
+                                "ingredients": [
+                                    "milk solids",
+                                    "sugar",
+                                    "water",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:53.357Z",
+                                "updatedAt": "2026-02-03T09:23:53.357Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981beb4cd6c6400e2377091",
+                                "name": "Fruit Salad",
+                                "description": "Fresh seasonal fruits mixed together.",
+                                "category": "Dessert",
+                                "price": 100,
+                                "ingredients": [
+                                    "apple",
+                                    "banana",
+                                    "orange",
+                                    "grapes"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 10,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:04.746Z",
+                                "updatedAt": "2026-02-03T09:24:04.746Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bec5cd6c6400e2377094",
+                                "name": "Brownie",
+                                "description": "Dense and fudgy chocolate brownie.",
+                                "category": "Dessert",
+                                "price": 120,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "butter",
+                                    "sugar",
+                                    "eggs"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 22,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:21.586Z",
+                                "updatedAt": "2026-02-03T09:24:21.586Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bed0cd6c6400e2377097",
+                                "name": "Pancakes",
+                                "description": "Fluffy pancakes served with syrup.",
+                                "category": "Dessert",
+                                "price": 150,
+                                "ingredients": [
+                                    "flour",
+                                    "milk",
+                                    "eggs",
+                                    "syrup"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:32.436Z",
+                                "updatedAt": "2026-02-03T09:24:32.436Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bedccd6c6400e237709a",
+                                "name": "Lemon Juice",
+                                "description": "Refreshing lemon drink with a hint of salt.",
+                                "category": "Beverage",
+                                "price": 60,
+                                "ingredients": [
+                                    "lemon",
+                                    "water",
+                                    "sugar",
+                                    "salt"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 5,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:44.820Z",
+                                "updatedAt": "2026-02-03T09:24:44.820Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bee8cd6c6400e237709d",
+                                "name": "Cold Coffee",
+                                "description": "Chilled coffee blended with milk and ice.",
+                                "category": "Beverage",
+                                "price": 110,
+                                "ingredients": [
+                                    "coffee",
+                                    "milk",
+                                    "sugar",
+                                    "ice"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 7,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:56.179Z",
+                                "updatedAt": "2026-02-03T09:24:56.179Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bef3cd6c6400e23770a0",
+                                "name": "Mango Milkshake",
+                                "description": "Thick and creamy mango milkshake.",
+                                "category": "Beverage",
+                                "price": 130,
+                                "ingredients": [
+                                    "mango",
+                                    "milk",
+                                    "sugar"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 6,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:07.498Z",
+                                "updatedAt": "2026-02-03T09:25:07.498Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bf00cd6c6400e23770a3",
+                                "name": "Green Tea",
+                                "description": "Light and healthy brewed green tea.",
+                                "category": "Beverage",
+                                "price": 70,
+                                "ingredients": [
+                                    "green tea leaves",
+                                    "water"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 4,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:20.855Z",
+                                "updatedAt": "2026-02-03T09:25:20.855Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bf0dcd6c6400e23770a6",
+                                "name": "Orange Juice",
+                                "description": "Freshly squeezed orange juice.",
+                                "category": "Beverage",
+                                "price": 90,
+                                "ingredients": [
+                                    "orange",
+                                    "water",
+                                    "sugar"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 6,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:33.600Z",
+                                "updatedAt": "2026-02-03T09:25:33.600Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bf18cd6c6400e23770a9",
+                                "name": "Soft Drink",
+                                "description": "Chilled carbonated soft beverage.",
+                                "category": "Beverage",
+                                "price": 50,
+                                "ingredients": [
+                                    "carbonated water",
+                                    "flavoring",
+                                    "sugar"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 2,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:44.202Z",
+                                "updatedAt": "2026-02-03T09:25:44.202Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bf21cd6c6400e23770ac",
+                                "name": "Strawberry Smoothie",
+                                "description": "Smooth and refreshing strawberry-based drink.",
+                                "category": "Beverage",
+                                "price": 140,
+                                "ingredients": [
+                                    "strawberry",
+                                    "milk",
+                                    "honey"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 7,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:53.732Z",
+                                "updatedAt": "2026-02-03T09:25:53.732Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-2:
+                  summary: Successful Response (with Price Filter)
+                  value: |-
+                    {
+                        "filteredData": true,
+                        "totalMenuItems": 16,
+                        "data": [
+                            {
+                                "_id": "6981bd73cd6c6400e2377063",
+                                "name": "Chicken Noodles",
+                                "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                                "category": "Appetizer",
+                                "price": 120,
+                                "ingredients": [
+                                    "chicken",
+                                    "noodles",
+                                    "salt",
+                                    "tomato sauce",
+                                    "pepper"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:18:43.926Z",
+                                "updatedAt": "2026-02-03T09:18:43.926Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bdebcd6c6400e2377069",
+                                "name": "Paneer Tikka",
+                                "description": "Grilled paneer cubes marinated in yogurt and spices.",
+                                "category": "Appetizer",
+                                "price": 160,
+                                "ingredients": [
+                                    "paneer",
+                                    "curd",
+                                    "spices",
+                                    "capsicum",
+                                    "onion"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:20:43.519Z",
+                                "updatedAt": "2026-02-03T09:20:43.519Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be10cd6c6400e2377072",
+                                "name": "Butter Chicken",
+                                "description": "Creamy tomato-based curry with juicy chicken pieces.",
+                                "category": "Main Course",
+                                "price": 280,
+                                "ingredients": [
+                                    "chicken",
+                                    "butter",
+                                    "tomato",
+                                    "cream",
+                                    "spices"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 30,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:20.461Z",
+                                "updatedAt": "2026-02-03T09:21:20.461Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be1bcd6c6400e2377075",
+                                "name": "Veg Biryani",
+                                "description": "Fragrant rice cooked with vegetables and aromatic spices.",
+                                "category": "Main Course",
+                                "price": 180,
+                                "ingredients": [
+                                    "rice",
+                                    "vegetables",
+                                    "spices",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 25,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:21:31.812Z",
+                                "updatedAt": "2026-02-03T09:21:31.812Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be4fcd6c6400e2377079",
+                                "name": "Chicken Fried Rice",
+                                "description": "Wok-tossed rice with chicken, vegetables, and soy sauce.",
+                                "category": "Main Course",
+                                "price": 220,
+                                "ingredients": [
+                                    "rice",
+                                    "chicken",
+                                    "soy sauce",
+                                    "vegetables",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:23.996Z",
+                                "updatedAt": "2026-02-03T09:22:23.996Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be5dcd6c6400e237707c",
+                                "name": "Paneer Butter Masala",
+                                "description": "Rich and creamy curry made with soft paneer cubes.",
+                                "category": "Main Course",
+                                "price": 240,
+                                "ingredients": [
+                                    "paneer",
+                                    "butter",
+                                    "tomato",
+                                    "cream",
+                                    "spices"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 28,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:37.515Z",
+                                "updatedAt": "2026-02-03T09:22:37.515Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be6dcd6c6400e237707f",
+                                "name": "Veg Pasta",
+                                "description": "Pasta tossed in tangy tomato sauce with fresh vegetables.",
+                                "category": "Main Course",
+                                "price": 200,
+                                "ingredients": [
+                                    "pasta",
+                                    "vegetables",
+                                    "tomato sauce",
+                                    "salt"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 18,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:22:53.226Z",
+                                "updatedAt": "2026-02-03T09:22:53.226Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be7acd6c6400e2377082",
+                                "name": "Chicken Burger",
+                                "description": "Juicy chicken patty layered in a soft bun with fresh veggies.",
+                                "category": "Main Course",
+                                "price": 190,
+                                "ingredients": [
+                                    "chicken patty",
+                                    "bun",
+                                    "lettuce",
+                                    "cheese",
+                                    "sauce"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:06.144Z",
+                                "updatedAt": "2026-02-03T09:23:06.144Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be86cd6c6400e2377085",
+                                "name": "Mutton Curry",
+                                "description": "Slow-cooked mutton in a rich and spicy gravy.",
+                                "category": "Main Course",
+                                "price": 320,
+                                "ingredients": [
+                                    "mutton",
+                                    "onion",
+                                    "tomato",
+                                    "spices",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 40,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:18.565Z",
+                                "updatedAt": "2026-02-03T09:23:18.565Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981be94cd6c6400e2377088",
+                                "name": "Chocolate Cake",
+                                "description": "Soft and moist chocolate-flavored cake.",
+                                "category": "Dessert",
+                                "price": 140,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "sugar",
+                                    "eggs",
+                                    "butter"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 25,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:32.647Z",
+                                "updatedAt": "2026-02-03T09:23:32.647Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bea0cd6c6400e237708b",
+                                "name": "Ice Cream Sundae",
+                                "description": "Vanilla ice cream topped with chocolate syrup and nuts.",
+                                "category": "Dessert",
+                                "price": 130,
+                                "ingredients": [
+                                    "ice cream",
+                                    "chocolate syrup",
+                                    "nuts"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 5,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:44.855Z",
+                                "updatedAt": "2026-02-03T09:23:44.855Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bec5cd6c6400e2377094",
+                                "name": "Brownie",
+                                "description": "Dense and fudgy chocolate brownie.",
+                                "category": "Dessert",
+                                "price": 120,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "butter",
+                                    "sugar",
+                                    "eggs"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 22,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:21.586Z",
+                                "updatedAt": "2026-02-03T09:24:21.586Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bed0cd6c6400e2377097",
+                                "name": "Pancakes",
+                                "description": "Fluffy pancakes served with syrup.",
+                                "category": "Dessert",
+                                "price": 150,
+                                "ingredients": [
+                                    "flour",
+                                    "milk",
+                                    "eggs",
+                                    "syrup"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:32.436Z",
+                                "updatedAt": "2026-02-03T09:24:32.436Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bee8cd6c6400e237709d",
+                                "name": "Cold Coffee",
+                                "description": "Chilled coffee blended with milk and ice.",
+                                "category": "Beverage",
+                                "price": 110,
+                                "ingredients": [
+                                    "coffee",
+                                    "milk",
+                                    "sugar",
+                                    "ice"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 7,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:56.179Z",
+                                "updatedAt": "2026-02-03T09:24:56.179Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bef3cd6c6400e23770a0",
+                                "name": "Mango Milkshake",
+                                "description": "Thick and creamy mango milkshake.",
+                                "category": "Beverage",
+                                "price": 130,
+                                "ingredients": [
+                                    "mango",
+                                    "milk",
+                                    "sugar"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 6,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:07.498Z",
+                                "updatedAt": "2026-02-03T09:25:07.498Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bf21cd6c6400e23770ac",
+                                "name": "Strawberry Smoothie",
+                                "description": "Smooth and refreshing strawberry-based drink.",
+                                "category": "Beverage",
+                                "price": 140,
+                                "ingredients": [
+                                    "strawberry",
+                                    "milk",
+                                    "honey"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 7,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:25:53.732Z",
+                                "updatedAt": "2026-02-03T09:25:53.732Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-3:
+                  summary: Successful Response (with All Filters)
+                  value: |-
+                    {
+                        "filteredData": true,
+                        "totalMenuItems": 6,
+                        "data": [
+                            {
+                                "_id": "6981be94cd6c6400e2377088",
+                                "name": "Chocolate Cake",
+                                "description": "Soft and moist chocolate-flavored cake.",
+                                "category": "Dessert",
+                                "price": 140,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "sugar",
+                                    "eggs",
+                                    "butter"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 25,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:32.647Z",
+                                "updatedAt": "2026-02-03T09:23:32.647Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bea0cd6c6400e237708b",
+                                "name": "Ice Cream Sundae",
+                                "description": "Vanilla ice cream topped with chocolate syrup and nuts.",
+                                "category": "Dessert",
+                                "price": 130,
+                                "ingredients": [
+                                    "ice cream",
+                                    "chocolate syrup",
+                                    "nuts"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 5,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:44.855Z",
+                                "updatedAt": "2026-02-03T09:23:44.855Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bea9cd6c6400e237708e",
+                                "name": "Gulab Jamun",
+                                "description": "Soft milk-solid dumplings soaked in sugar syrup.",
+                                "category": "Dessert",
+                                "price": 90,
+                                "ingredients": [
+                                    "milk solids",
+                                    "sugar",
+                                    "water",
+                                    "oil"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 20,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:23:53.357Z",
+                                "updatedAt": "2026-02-03T09:23:53.357Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981beb4cd6c6400e2377091",
+                                "name": "Fruit Salad",
+                                "description": "Fresh seasonal fruits mixed together.",
+                                "category": "Dessert",
+                                "price": 100,
+                                "ingredients": [
+                                    "apple",
+                                    "banana",
+                                    "orange",
+                                    "grapes"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 10,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:04.746Z",
+                                "updatedAt": "2026-02-03T09:24:04.746Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bec5cd6c6400e2377094",
+                                "name": "Brownie",
+                                "description": "Dense and fudgy chocolate brownie.",
+                                "category": "Dessert",
+                                "price": 120,
+                                "ingredients": [
+                                    "flour",
+                                    "cocoa powder",
+                                    "butter",
+                                    "sugar",
+                                    "eggs"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 22,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:21.586Z",
+                                "updatedAt": "2026-02-03T09:24:21.586Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6981bed0cd6c6400e2377097",
+                                "name": "Pancakes",
+                                "description": "Fluffy pancakes served with syrup.",
+                                "category": "Dessert",
+                                "price": 150,
+                                "ingredients": [
+                                    "flour",
+                                    "milk",
+                                    "eggs",
+                                    "syrup"
+                                ],
+                                "isAvailable": true,
+                                "preparationTime": 15,
+                                "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                "createdAt": "2026-02-03T09:24:32.436Z",
+                                "updatedAt": "2026-02-03T09:24:32.436Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '61'
+            ETag:
+              schema:
+                type: string
+                example: W/"3d-pXHTyxPTBR6xiPWUZPUidkf0Bb8"
+            Date:
+              schema:
+                type: string
+                example: Wed, 04 Feb 2026 16:25:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "filteredData": true,
+                    "msg": "No data found after filteration"
+                }
+  /menu/search:
+    get:
+      tags:
+        - Menu
+      summary: Get Menu Items (with Text Indexing)
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+          example: rice
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '952'
+            ETag:
+              schema:
+                type: string
+                example: W/"3b8-4qD8q1B5h9A7v98P7nAlgKpyqk8"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 13:14:53 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Searched for the query: rice",
+                    "searchedData": [
+                        {
+                            "_id": "6981be4fcd6c6400e2377079",
+                            "name": "Chicken Fried Rice",
+                            "description": "Wok-tossed rice with chicken, vegetables, and soy sauce.",
+                            "category": "Main Course",
+                            "price": 220,
+                            "ingredients": [
+                                "rice",
+                                "chicken",
+                                "soy sauce",
+                                "vegetables",
+                                "oil"
+                            ],
+                            "isAvailable": true,
+                            "preparationTime": 20,
+                            "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                            "createdAt": "2026-02-03T09:22:23.996Z",
+                            "updatedAt": "2026-02-03T09:22:23.996Z",
+                            "__v": 0
+                        },
+                        {
+                            "_id": "6981be1bcd6c6400e2377075",
+                            "name": "Veg Biryani",
+                            "description": "Fragrant rice cooked with vegetables and aromatic spices.",
+                            "category": "Main Course",
+                            "price": 180,
+                            "ingredients": [
+                                "rice",
+                                "vegetables",
+                                "spices",
+                                "oil"
+                            ],
+                            "isAvailable": true,
+                            "preparationTime": 25,
+                            "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                            "createdAt": "2026-02-03T09:21:31.812Z",
+                            "updatedAt": "2026-02-03T09:21:31.812Z",
+                            "__v": 0
+                        }
+                    ]
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '51'
+            ETag:
+              schema:
+                type: string
+                example: W/"33-LWeDPXMbUHFZACJcVqovmKRyuE0"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 13:18:19 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "searchedData": "No data found for the query: cat"
+                }
+  /menu/6981bd73cd6c6400e2377063:
+    get:
+      tags:
+        - Menu
+      summary: Get Menu Item By Id
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '511'
+            ETag:
+              schema:
+                type: string
+                example: W/"1ff-m9qeBNVzujre+Y2O8DR8tIAExUE"
+            Date:
+              schema:
+                type: string
+                example: Wed, 04 Feb 2026 16:29:14 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Menu item found!",
+                    "menuData": {
+                        "_id": "6981bd73cd6c6400e2377063",
+                        "name": "Chicken Noodles",
+                        "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                        "category": "Appetizer",
+                        "price": 120,
+                        "ingredients": [
+                            "chicken",
+                            "noodles",
+                            "salt",
+                            "tomato sauce",
+                            "pepper"
+                        ],
+                        "isAvailable": true,
+                        "preparationTime": 15,
+                        "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                        "createdAt": "2026-02-03T09:18:43.926Z",
+                        "updatedAt": "2026-02-03T09:18:43.926Z",
+                        "__v": 0
+                    }
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            ETag:
+              schema:
+                type: string
+                example: W/"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q"
+            Date:
+              schema:
+                type: string
+                example: Wed, 04 Feb 2026 16:30:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid MenuID (or) MenuID not found!"
+                }
+  /menu/:
+    post:
+      tags:
+        - Menu
+      summary: Create Menu Item
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Strawberry Smoothie
+                description: Smooth and refreshing strawberry-based drink.
+                category: Beverage
+                price: 140
+                ingredients:
+                  - strawberry
+                  - milk
+                  - honey
+                preparationTime: 7
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '522'
+            ETag:
+              schema:
+                type: string
+                example: W/"20a-M12/0j4vf6lpvh814f8VtDMHXQ8"
+            Date:
+              schema:
+                type: string
+                example: Tue, 03 Feb 2026 09:18:43 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Menu item created Successfully!",
+                    "data": {
+                        "name": "Chicken Noodles",
+                        "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                        "category": "Appetizer",
+                        "price": 120,
+                        "ingredients": [
+                            "chicken",
+                            "noodles",
+                            "salt",
+                            "tomato sauce",
+                            "pepper"
+                        ],
+                        "isAvailable": true,
+                        "preparationTime": 15,
+                        "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                        "_id": "6981bd73cd6c6400e2377063",
+                        "createdAt": "2026-02-03T09:18:43.926Z",
+                        "updatedAt": "2026-02-03T09:18:43.926Z",
+                        "__v": 0
+                    }
+                }
+        '409':
+          description: Conflict
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '68'
+            ETag:
+              schema:
+                type: string
+                example: W/"44-qFCXkCebJdyz1yNlqUICDPIuZ2g"
+            Date:
+              schema:
+                type: string
+                example: Tue, 03 Feb 2026 09:21:32 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Name: Veg Biryani in Category: Main Course already exists!"
+                }
+  /menu/6984b5f95d15403e43e2276d:
+    put:
+      tags:
+        - Menu
+      summary: Update Menu Item (with ID)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Veg Fried Rice
+                description: Wok-tossed rice with fresh vegetables and light seasoning.
+                category: Main Course
+                price: 190
+                ingredients:
+                  - rice
+                  - vegetables
+                  - soy sauce
+                  - oil
+                preparationTime: 20
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '65'
+            ETag:
+              schema:
+                type: string
+                example: W/"41-VuxY/NjwFSP5X4Uasik57gZ0ByA"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 16:48:24 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Updated the menu item with ID: 6984b5f95d15403e43e2276d"
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            ETag:
+              schema:
+                type: string
+                example: W/"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 16:53:23 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid MenuID (or) MenuID not found!"
+                }
+    delete:
+      tags:
+        - Menu
+      summary: Delete Menu Item (with ID)
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '65'
+            ETag:
+              schema:
+                type: string
+                example: W/"41-JbXTc/hROdwKsRxMdPlo10LeEno"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 15:42:01 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Deleted the menu item with ID: 6984b60a5d15403e43e22770"
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            ETag:
+              schema:
+                type: string
+                example: W/"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q"
+            Date:
+              schema:
+                type: string
+                example: Thu, 05 Feb 2026 15:43:48 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid MenuID (or) MenuID not found!"
+                }
+  /menu/6981bdbecd6c6400e2377066/availability:
+    patch:
+      tags:
+        - Menu
+      summary: Toggle Availability (with ID)
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '53'
+            ETag:
+              schema:
+                type: string
+                example: W/"35-gvg1YG89AGXzlt+Dk8YZosl784Q"
+            Date:
+              schema:
+                type: string
+                example: Fri, 06 Feb 2026 06:38:58 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "MenuItem availability toggled successfully!"
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '47'
+            ETag:
+              schema:
+                type: string
+                example: W/"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q"
+            Date:
+              schema:
+                type: string
+                example: Fri, 06 Feb 2026 06:38:04 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Not Found Response (menu ID Does Not Exist)
+                  value: |-
+                    {
+                        "msg": "Invalid MenuID (or) MenuID not found!"
+                    }
+                example-1:
+                  summary: Not Found Response (does Not Exist)
+                  value: |-
+                    {
+                        "msg": "MenuItem not found with the ID: 6984b5f95d15403e43e2276d"
+                    }
+  /orders:
+    post:
+      tags:
+        - Order
+      summary: Create a new order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                items:
+                  - menuItem: 6981be94cd6c6400e2377088
+                    quantity: 5
+                    price: 140
+                status: Preparing
+                customerName: Olivia Taylor
+                tableNumber: 7
+      responses:
+        '201':
+          description: Created
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '391'
+            ETag:
+              schema:
+                type: string
+                example: W/"187-PKdT8xhMK685HIygPfcndlukMXU"
+            Date:
+              schema:
+                type: string
+                example: Mon, 09 Feb 2026 05:30:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Order created successfully!",
+                    "orderData": {
+                        "items": [
+                            {
+                                "menuItem": "6981be94cd6c6400e2377088",
+                                "quantity": 5,
+                                "price": 140,
+                                "_id": "698970d88ea0993b79ca1ede"
+                            }
+                        ],
+                        "totalAmount": 700,
+                        "status": "Preparing",
+                        "customerName": "Olivia Taylor",
+                        "tableNumber": 7,
+                        "_id": "698970d88ea0993b79ca1edd",
+                        "orderNumber": "ORD-964779",
+                        "createdAt": "2026-02-09T05:30:00.816Z",
+                        "updatedAt": "2026-02-09T05:30:00.816Z",
+                        "__v": 0
+                    }
+                }
+        '409':
+          description: Conflict
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '61'
+            ETag:
+              schema:
+                type: string
+                example: W/"3d-v0Fth9SHcWcEyaLkdwOWsgzQWmc"
+            Date:
+              schema:
+                type: string
+                example: Mon, 09 Feb 2026 06:24:14 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Table is occupied, try with a different tableNumber"
+                }
+    get:
+      tags:
+        - Order
+      summary: Get Orders (with Pagiantion and Filtering)
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '4414'
+            ETag:
+              schema:
+                type: string
+                example: W/"113e-8TiTbtqQdScArvH+V5hYpY50OHw"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 06:27:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Successful Response (with All Orders)
+                  value: |-
+                    {
+                        "hasFilter": false,
+                        "hasPagination": false,
+                        "data": [
+                            {
+                                "_id": "69880f2e0813ba1fefbaa966",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be5dcd6c6400e237707c",
+                                        "quantity": 2,
+                                        "price": 240,
+                                        "_id": "69880f2e0813ba1fefbaa967"
+                                    },
+                                    {
+                                        "menuItem": "6981bd73cd6c6400e2377063",
+                                        "quantity": 1,
+                                        "price": 120,
+                                        "_id": "69880f2e0813ba1fefbaa968"
+                                    }
+                                ],
+                                "totalAmount": 600,
+                                "status": "Pending",
+                                "customerName": "John Doe",
+                                "tableNumber": 3,
+                                "orderNumber": "ORD-230289",
+                                "createdAt": "2026-02-08T04:21:02.226Z",
+                                "updatedAt": "2026-02-08T04:21:02.226Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989674c8ea0993b79ca1ec6",
+                                "items": [
+                                    {
+                                        "menuItem": "6981bdbecd6c6400e2377066",
+                                        "quantity": 6,
+                                        "price": 90,
+                                        "_id": "6989674c8ea0993b79ca1ec7"
+                                    }
+                                ],
+                                "totalAmount": 540,
+                                "status": "Preparing",
+                                "customerName": "Jane Smith",
+                                "tableNumber": 5,
+                                "orderNumber": "ORD-173629",
+                                "createdAt": "2026-02-09T04:49:16.635Z",
+                                "updatedAt": "2026-02-09T04:49:16.635Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698967a58ea0993b79ca1ec9",
+                                "items": [
+                                    {
+                                        "menuItem": "6981bdebcd6c6400e2377069",
+                                        "quantity": 2,
+                                        "price": 160,
+                                        "_id": "698967a58ea0993b79ca1eca"
+                                    },
+                                    {
+                                        "menuItem": "6981bdf7cd6c6400e237706c",
+                                        "quantity": 6,
+                                        "price": 80,
+                                        "_id": "698967a58ea0993b79ca1ecb"
+                                    }
+                                ],
+                                "totalAmount": 800,
+                                "status": "Pending",
+                                "customerName": "Robert Brown",
+                                "tableNumber": 2,
+                                "orderNumber": "ORD-012389",
+                                "createdAt": "2026-02-09T04:50:45.193Z",
+                                "updatedAt": "2026-02-09T04:50:45.193Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698967db8ea0993b79ca1ecd",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be00cd6c6400e237706f",
+                                        "quantity": 1,
+                                        "price": 100,
+                                        "_id": "698967db8ea0993b79ca1ece"
+                                    }
+                                ],
+                                "totalAmount": 100,
+                                "status": "Ready",
+                                "customerName": "Emily Davis",
+                                "tableNumber": 8,
+                                "orderNumber": "ORD-154499",
+                                "createdAt": "2026-02-09T04:51:39.829Z",
+                                "updatedAt": "2026-02-09T04:51:39.829Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698968188ea0993b79ca1ed0",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be1bcd6c6400e2377075",
+                                        "quantity": 4,
+                                        "price": 180,
+                                        "_id": "698968188ea0993b79ca1ed1"
+                                    }
+                                ],
+                                "totalAmount": 720,
+                                "status": "Pending",
+                                "customerName": "Michael Clark",
+                                "tableNumber": 6,
+                                "orderNumber": "ORD-577687",
+                                "createdAt": "2026-02-09T04:52:40.907Z",
+                                "updatedAt": "2026-02-09T04:52:40.907Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989686d8ea0993b79ca1ed3",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be4fcd6c6400e2377079",
+                                        "quantity": 2,
+                                        "price": 220,
+                                        "_id": "6989686d8ea0993b79ca1ed4"
+                                    },
+                                    {
+                                        "menuItem": "6981be6dcd6c6400e237707f",
+                                        "quantity": 1,
+                                        "price": 200,
+                                        "_id": "6989686d8ea0993b79ca1ed5"
+                                    }
+                                ],
+                                "totalAmount": 640,
+                                "status": "Preparing",
+                                "customerName": "Alice Johnson",
+                                "tableNumber": 1,
+                                "orderNumber": "ORD-186566",
+                                "createdAt": "2026-02-09T04:54:05.117Z",
+                                "updatedAt": "2026-02-09T04:54:05.117Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989706c8ea0993b79ca1ed7",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be7acd6c6400e2377082",
+                                        "quantity": 2,
+                                        "price": 190,
+                                        "_id": "6989706c8ea0993b79ca1ed8"
+                                    }
+                                ],
+                                "totalAmount": 380,
+                                "status": "Pending",
+                                "customerName": "David Wilson",
+                                "tableNumber": 9,
+                                "orderNumber": "ORD-912574",
+                                "createdAt": "2026-02-09T05:28:12.799Z",
+                                "updatedAt": "2026-02-09T05:28:12.799Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970998ea0993b79ca1eda",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be86cd6c6400e2377085",
+                                        "quantity": 3,
+                                        "price": 320,
+                                        "_id": "698970998ea0993b79ca1edb"
+                                    }
+                                ],
+                                "totalAmount": 960,
+                                "status": "Ready",
+                                "customerName": "Sophia Martinez",
+                                "tableNumber": 4,
+                                "orderNumber": "ORD-869158",
+                                "createdAt": "2026-02-09T05:28:57.610Z",
+                                "updatedAt": "2026-02-09T05:28:57.610Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970d88ea0993b79ca1edd",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "698970d88ea0993b79ca1ede"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-964779",
+                                "createdAt": "2026-02-09T05:30:00.816Z",
+                                "updatedAt": "2026-02-09T05:30:00.816Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698971778ea0993b79ca1ee0",
+                                "items": [
+                                    {
+                                        "menuItem": "6981beb4cd6c6400e2377091",
+                                        "quantity": 1,
+                                        "price": 100,
+                                        "_id": "698971778ea0993b79ca1ee1"
+                                    }
+                                ],
+                                "totalAmount": 100,
+                                "status": "Pending",
+                                "customerName": "Chris Moore",
+                                "tableNumber": 12,
+                                "orderNumber": "ORD-160624",
+                                "createdAt": "2026-02-09T05:32:39.300Z",
+                                "updatedAt": "2026-02-09T05:32:39.300Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69897d8e43ce1d3f7d4c52fa",
+                                "items": [
+                                    {
+                                        "menuItem": "6981beb4cd6c6400e2377091",
+                                        "quantity": 1,
+                                        "price": 100,
+                                        "_id": "69897d8e43ce1d3f7d4c52fb"
+                                    }
+                                ],
+                                "totalAmount": 100,
+                                "status": "Pending",
+                                "customerName": "Chris Moore",
+                                "tableNumber": 12,
+                                "orderNumber": "ORD-418379",
+                                "createdAt": "2026-02-09T06:24:14.936Z",
+                                "updatedAt": "2026-02-09T06:24:14.936Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69897e2637376fe73452d4e1",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "69897e2637376fe73452d4e2"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-588980",
+                                "createdAt": "2026-02-09T06:26:46.159Z",
+                                "updatedAt": "2026-02-09T06:26:46.159Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-1:
+                  summary: Successful Response (with Status Filtering)
+                  value: |-
+                    {
+                        "hasFilter": true,
+                        "hasPagination": false,
+                        "data": [
+                            {
+                                "_id": "6989674c8ea0993b79ca1ec6",
+                                "items": [
+                                    {
+                                        "menuItem": "6981bdbecd6c6400e2377066",
+                                        "quantity": 6,
+                                        "price": 90,
+                                        "_id": "6989674c8ea0993b79ca1ec7"
+                                    }
+                                ],
+                                "totalAmount": 540,
+                                "status": "Preparing",
+                                "customerName": "Jane Smith",
+                                "tableNumber": 5,
+                                "orderNumber": "ORD-173629",
+                                "createdAt": "2026-02-09T04:49:16.635Z",
+                                "updatedAt": "2026-02-09T04:49:16.635Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989686d8ea0993b79ca1ed3",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be4fcd6c6400e2377079",
+                                        "quantity": 2,
+                                        "price": 220,
+                                        "_id": "6989686d8ea0993b79ca1ed4"
+                                    },
+                                    {
+                                        "menuItem": "6981be6dcd6c6400e237707f",
+                                        "quantity": 1,
+                                        "price": 200,
+                                        "_id": "6989686d8ea0993b79ca1ed5"
+                                    }
+                                ],
+                                "totalAmount": 640,
+                                "status": "Preparing",
+                                "customerName": "Alice Johnson",
+                                "tableNumber": 1,
+                                "orderNumber": "ORD-186566",
+                                "createdAt": "2026-02-09T04:54:05.117Z",
+                                "updatedAt": "2026-02-09T04:54:05.117Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970d88ea0993b79ca1edd",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "698970d88ea0993b79ca1ede"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-964779",
+                                "createdAt": "2026-02-09T05:30:00.816Z",
+                                "updatedAt": "2026-02-09T05:30:00.816Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69897e2637376fe73452d4e1",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "69897e2637376fe73452d4e2"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-588980",
+                                "createdAt": "2026-02-09T06:26:46.159Z",
+                                "updatedAt": "2026-02-09T06:26:46.159Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-2:
+                  summary: Successful Response (with Pagination)
+                  value: |-
+                    {
+                        "hasFilter": false,
+                        "hasPagination": true,
+                        "totalOrders": 12,
+                        "totalPages": 3,
+                        "currentPage": 2,
+                        "limit": 5,
+                        "data": [
+                            {
+                                "_id": "6989686d8ea0993b79ca1ed3",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be4fcd6c6400e2377079",
+                                        "quantity": 2,
+                                        "price": 220,
+                                        "_id": "6989686d8ea0993b79ca1ed4"
+                                    },
+                                    {
+                                        "menuItem": "6981be6dcd6c6400e237707f",
+                                        "quantity": 1,
+                                        "price": 200,
+                                        "_id": "6989686d8ea0993b79ca1ed5"
+                                    }
+                                ],
+                                "totalAmount": 640,
+                                "status": "Preparing",
+                                "customerName": "Alice Johnson",
+                                "tableNumber": 1,
+                                "orderNumber": "ORD-186566",
+                                "createdAt": "2026-02-09T04:54:05.117Z",
+                                "updatedAt": "2026-02-09T04:54:05.117Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989706c8ea0993b79ca1ed7",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be7acd6c6400e2377082",
+                                        "quantity": 2,
+                                        "price": 190,
+                                        "_id": "6989706c8ea0993b79ca1ed8"
+                                    }
+                                ],
+                                "totalAmount": 380,
+                                "status": "Pending",
+                                "customerName": "David Wilson",
+                                "tableNumber": 9,
+                                "orderNumber": "ORD-912574",
+                                "createdAt": "2026-02-09T05:28:12.799Z",
+                                "updatedAt": "2026-02-09T05:28:12.799Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970998ea0993b79ca1eda",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be86cd6c6400e2377085",
+                                        "quantity": 3,
+                                        "price": 320,
+                                        "_id": "698970998ea0993b79ca1edb"
+                                    }
+                                ],
+                                "totalAmount": 960,
+                                "status": "Ready",
+                                "customerName": "Sophia Martinez",
+                                "tableNumber": 4,
+                                "orderNumber": "ORD-869158",
+                                "createdAt": "2026-02-09T05:28:57.610Z",
+                                "updatedAt": "2026-02-09T05:28:57.610Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970d88ea0993b79ca1edd",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "698970d88ea0993b79ca1ede"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-964779",
+                                "createdAt": "2026-02-09T05:30:00.816Z",
+                                "updatedAt": "2026-02-09T05:30:00.816Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698971778ea0993b79ca1ee0",
+                                "items": [
+                                    {
+                                        "menuItem": "6981beb4cd6c6400e2377091",
+                                        "quantity": 1,
+                                        "price": 100,
+                                        "_id": "698971778ea0993b79ca1ee1"
+                                    }
+                                ],
+                                "totalAmount": 100,
+                                "status": "Pending",
+                                "customerName": "Chris Moore",
+                                "tableNumber": 12,
+                                "orderNumber": "ORD-160624",
+                                "createdAt": "2026-02-09T05:32:39.300Z",
+                                "updatedAt": "2026-02-09T05:32:39.300Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+                example-3:
+                  summary: Successful Response (with both Filtering and Pagination)
+                  value: |-
+                    {
+                        "hasFilter": true,
+                        "hasPagination": true,
+                        "totalOrders": 12,
+                        "totalPages": 3,
+                        "currentPage": 1,
+                        "limit": 5,
+                        "data": [
+                            {
+                                "_id": "6989674c8ea0993b79ca1ec6",
+                                "items": [
+                                    {
+                                        "menuItem": "6981bdbecd6c6400e2377066",
+                                        "quantity": 6,
+                                        "price": 90,
+                                        "_id": "6989674c8ea0993b79ca1ec7"
+                                    }
+                                ],
+                                "totalAmount": 540,
+                                "status": "Preparing",
+                                "customerName": "Jane Smith",
+                                "tableNumber": 5,
+                                "orderNumber": "ORD-173629",
+                                "createdAt": "2026-02-09T04:49:16.635Z",
+                                "updatedAt": "2026-02-09T04:49:16.635Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "6989686d8ea0993b79ca1ed3",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be4fcd6c6400e2377079",
+                                        "quantity": 2,
+                                        "price": 220,
+                                        "_id": "6989686d8ea0993b79ca1ed4"
+                                    },
+                                    {
+                                        "menuItem": "6981be6dcd6c6400e237707f",
+                                        "quantity": 1,
+                                        "price": 200,
+                                        "_id": "6989686d8ea0993b79ca1ed5"
+                                    }
+                                ],
+                                "totalAmount": 640,
+                                "status": "Preparing",
+                                "customerName": "Alice Johnson",
+                                "tableNumber": 1,
+                                "orderNumber": "ORD-186566",
+                                "createdAt": "2026-02-09T04:54:05.117Z",
+                                "updatedAt": "2026-02-09T04:54:05.117Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "698970d88ea0993b79ca1edd",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "698970d88ea0993b79ca1ede"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-964779",
+                                "createdAt": "2026-02-09T05:30:00.816Z",
+                                "updatedAt": "2026-02-09T05:30:00.816Z",
+                                "__v": 0
+                            },
+                            {
+                                "_id": "69897e2637376fe73452d4e1",
+                                "items": [
+                                    {
+                                        "menuItem": "6981be94cd6c6400e2377088",
+                                        "quantity": 5,
+                                        "price": 140,
+                                        "_id": "69897e2637376fe73452d4e2"
+                                    }
+                                ],
+                                "totalAmount": 700,
+                                "status": "Preparing",
+                                "customerName": "Olivia Taylor",
+                                "tableNumber": 7,
+                                "orderNumber": "ORD-588980",
+                                "createdAt": "2026-02-09T06:26:46.159Z",
+                                "updatedAt": "2026-02-09T06:26:46.159Z",
+                                "__v": 0
+                            }
+                        ]
+                    }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '30'
+            ETag:
+              schema:
+                type: string
+                example: W/"1e-005Bag2hfeK9FnsKd6Y5PWuj2Ms"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 06:32:36 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Page does not exist!"
+                }
+  /orders/69880f2e0813ba1fefbaa966:
+    get:
+      tags:
+        - Order
+      summary: Get Single Order Details (with Populated Menu Details)
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1358'
+            ETag:
+              schema:
+                type: string
+                example: W/"54e-dmJaZG3sDexO/BnFz+7D82b5miM"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 07:54:07 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Order item found successfully!",
+                    "orderDetails": {
+                        "_id": "69880f2e0813ba1fefbaa966",
+                        "items": [
+                            {
+                                "menuItem": {
+                                    "_id": "6981be5dcd6c6400e237707c",
+                                    "name": "Paneer Butter Masala",
+                                    "description": "Rich and creamy curry made with soft paneer cubes.",
+                                    "category": "Main Course",
+                                    "price": 240,
+                                    "ingredients": [
+                                        "paneer",
+                                        "butter",
+                                        "tomato",
+                                        "cream",
+                                        "spices"
+                                    ],
+                                    "isAvailable": true,
+                                    "preparationTime": 28,
+                                    "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                    "createdAt": "2026-02-03T09:22:37.515Z",
+                                    "updatedAt": "2026-02-03T09:22:37.515Z",
+                                    "__v": 0
+                                },
+                                "quantity": 2,
+                                "price": 240,
+                                "_id": "69880f2e0813ba1fefbaa967"
+                            },
+                            {
+                                "menuItem": {
+                                    "_id": "6981bd73cd6c6400e2377063",
+                                    "name": "Chicken Noodles",
+                                    "description": "Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.",
+                                    "category": "Appetizer",
+                                    "price": 120,
+                                    "ingredients": [
+                                        "chicken",
+                                        "noodles",
+                                        "salt",
+                                        "tomato sauce",
+                                        "pepper"
+                                    ],
+                                    "isAvailable": true,
+                                    "preparationTime": 15,
+                                    "imageLink": "https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true",
+                                    "createdAt": "2026-02-03T09:18:43.926Z",
+                                    "updatedAt": "2026-02-03T09:18:43.926Z",
+                                    "__v": 0
+                                },
+                                "quantity": 1,
+                                "price": 120,
+                                "_id": "69880f2e0813ba1fefbaa968"
+                            }
+                        ],
+                        "totalAmount": 600,
+                        "status": "Pending",
+                        "customerName": "John Doe",
+                        "tableNumber": 3,
+                        "orderNumber": "ORD-230289",
+                        "createdAt": "2026-02-08T04:21:02.226Z",
+                        "updatedAt": "2026-02-08T04:21:02.226Z",
+                        "__v": 0
+                    }
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '51'
+            ETag:
+              schema:
+                type: string
+                example: W/"33-/x4iCj9KLYyS6PxCenfLkFWtuzU"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 07:55:42 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Invalid Order ID (or) Order ID not found!"
+                }
+  /orders/69880f2e0813ba1fefbaa966/status:
+    patch:
+      tags:
+        - Order
+      summary: Update Order Status
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                status: Preparing
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '486'
+            ETag:
+              schema:
+                type: string
+                example: W/"1e6-RcvMBRpYMUaJuYBIeUKMinTEJDg"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 08:21:12 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Updated Order status successfully!",
+                    "data": {
+                        "_id": "69880f2e0813ba1fefbaa966",
+                        "items": [
+                            {
+                                "menuItem": "6981be5dcd6c6400e237707c",
+                                "quantity": 2,
+                                "price": 240,
+                                "_id": "69880f2e0813ba1fefbaa967"
+                            },
+                            {
+                                "menuItem": "6981bd73cd6c6400e2377063",
+                                "quantity": 1,
+                                "price": 120,
+                                "_id": "69880f2e0813ba1fefbaa968"
+                            }
+                        ],
+                        "totalAmount": 600,
+                        "status": "Preparing",
+                        "customerName": "John Doe",
+                        "tableNumber": 3,
+                        "orderNumber": "ORD-230289",
+                        "createdAt": "2026-02-08T04:21:02.226Z",
+                        "updatedAt": "2026-02-10T08:21:12.448Z",
+                        "__v": 0
+                    }
+                }
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '51'
+            ETag:
+              schema:
+                type: string
+                example: W/"33-/x4iCj9KLYyS6PxCenfLkFWtuzU"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 08:22:33 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              examples:
+                example-0:
+                  summary: Not Found Response (invalid Order ID)
+                  value: |-
+                    {
+                        "msg": "Invalid Order ID (or) Order ID not found!"
+                    }
+                example-1:
+                  summary: Not Found Response (invalid Staus sent)
+                  value: |-
+                    {
+                        "msg": "Invalid status sent in body!"
+                    }
+  /orderad-route:
+    get:
+      tags:
+        - Non-Existing Routes
+      summary: Bad Route
+      responses:
+        '404':
+          description: Not Found
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '39'
+            ETag:
+              schema:
+                type: string
+                example: W/"27-tkSHSyE/wzZVoXKJUIrPM904aSE"
+            Date:
+              schema:
+                type: string
+                example: Tue, 10 Feb 2026 14:41:32 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "msg": "Bad route (or) No route found"
+                }
