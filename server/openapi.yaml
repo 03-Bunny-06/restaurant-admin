@@ -5,7 +5,7 @@ info:
   description: | 
       A robust RESTful backend service for managing restaurant menus and orders with CRUD, search, availability control, and status-tracked order handling.
 
-      🚀 **Features**: 
+      🚀 **Key Features**: 
         - **Menu Management:** Create, read, update, and delete (CRUD) menu items.
         - **Search & Filters:** Support searching menus and filtering based on fields like category or availability. 
         - **Order Handling:** Accept new orders, track statuses (e.g., Pending, Completed), and update order flows.
@@ -14,7 +14,7 @@ info:
       🛠 **Tech Stack**: 
         - **Node.js:** JavaScript runtime for server-side logic. 
         - **Express.js:** Lightweight REST API framework handling routing and HTTP requests.
-        - **MongoDB:** NoSQL database for scalable data storage.
+        - **MongoDB & Mongoose:** NoSQL database and ODM for storage and schema modeling.
         - **Swagger (OpenAPI):** API documentation support for interactive endpoint testing.
   contact: 
     name: Sai Kowshik 
