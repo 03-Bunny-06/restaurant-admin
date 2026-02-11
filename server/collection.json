@@ -1,0 +1,2313 @@
+{
+  "info": {
+    "_postman_id": "0c59a50d-c65f-406c-b485-68223e4dc0b5",
+    "name": "Restaurant Admin",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39201744"
+  },
+  "item": [
+    {
+      "name": "Menu",
+      "item": [
+        {
+          "name": "Get Menu Items",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (fetched All Menu Items)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:3000/menu",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "10844"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a5c-66LOpjC508cxJJSZXVI3lr+G+NM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:18:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": false,\n    \"totalMenuItems\": 25,\n    \"data\": [\n        {\n            \"_id\": \"6981bd73cd6c6400e2377063\",\n            \"name\": \"Chicken Noodles\",\n            \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n            \"category\": \"Appetizer\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"chicken\",\n                \"noodles\",\n                \"salt\",\n                \"tomato sauce\",\n                \"pepper\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n            \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdbecd6c6400e2377066\",\n            \"name\": \"Veg Spring Rolls\",\n            \"description\": \"Crispy rolls stuffed with seasoned mixed vegetables.\",\n            \"category\": \"Appetizer\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"cabbage\",\n                \"carrot\",\n                \"spring roll sheets\",\n                \"salt\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 12,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:19:58.702Z\",\n            \"updatedAt\": \"2026-02-03T09:19:58.702Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdebcd6c6400e2377069\",\n            \"name\": \"Paneer Tikka\",\n            \"description\": \"Grilled paneer cubes marinated in yogurt and spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 160,\n            \"ingredients\": [\n                \"paneer\",\n                \"curd\",\n                \"spices\",\n                \"capsicum\",\n                \"onion\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:43.519Z\",\n            \"updatedAt\": \"2026-02-03T09:20:43.519Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdf7cd6c6400e237706c\",\n            \"name\": \"Garlic Bread\",\n            \"description\": \"Toasted bread topped with garlic butter and melted cheese.\",\n            \"category\": \"Appetizer\",\n            \"price\": 80,\n            \"ingredients\": [\n                \"bread\",\n                \"butter\",\n                \"garlic\",\n                \"cheese\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 8,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:55.395Z\",\n            \"updatedAt\": \"2026-02-03T09:20:55.395Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be00cd6c6400e237706f\",\n            \"name\": \"Chicken Soup\",\n            \"description\": \"Hot and comforting soup made with chicken and mild spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"chicken\",\n                \"water\",\n                \"salt\",\n                \"pepper\",\n                \"ginger\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:04.223Z\",\n            \"updatedAt\": \"2026-02-03T09:21:04.223Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be10cd6c6400e2377072\",\n            \"name\": \"Butter Chicken\",\n            \"description\": \"Creamy tomato-based curry with juicy chicken pieces.\",\n            \"category\": \"Main Course\",\n            \"price\": 280,\n            \"ingredients\": [\n                \"chicken\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 30,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:20.461Z\",\n            \"updatedAt\": \"2026-02-03T09:21:20.461Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be1bcd6c6400e2377075\",\n            \"name\": \"Veg Biryani\",\n            \"description\": \"Fragrant rice cooked with vegetables and aromatic spices.\",\n            \"category\": \"Main Course\",\n            \"price\": 180,\n            \"ingredients\": [\n                \"rice\",\n                \"vegetables\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:31.812Z\",\n            \"updatedAt\": \"2026-02-03T09:21:31.812Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be4fcd6c6400e2377079\",\n            \"name\": \"Chicken Fried Rice\",\n            \"description\": \"Wok-tossed rice with chicken, vegetables, and soy sauce.\",\n            \"category\": \"Main Course\",\n            \"price\": 220,\n            \"ingredients\": [\n                \"rice\",\n                \"chicken\",\n                \"soy sauce\",\n                \"vegetables\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:23.996Z\",\n            \"updatedAt\": \"2026-02-03T09:22:23.996Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be5dcd6c6400e237707c\",\n            \"name\": \"Paneer Butter Masala\",\n            \"description\": \"Rich and creamy curry made with soft paneer cubes.\",\n            \"category\": \"Main Course\",\n            \"price\": 240,\n            \"ingredients\": [\n                \"paneer\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 28,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:37.515Z\",\n            \"updatedAt\": \"2026-02-03T09:22:37.515Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be6dcd6c6400e237707f\",\n            \"name\": \"Veg Pasta\",\n            \"description\": \"Pasta tossed in tangy tomato sauce with fresh vegetables.\",\n            \"category\": \"Main Course\",\n            \"price\": 200,\n            \"ingredients\": [\n                \"pasta\",\n                \"vegetables\",\n                \"tomato sauce\",\n                \"salt\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:53.226Z\",\n            \"updatedAt\": \"2026-02-03T09:22:53.226Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be7acd6c6400e2377082\",\n            \"name\": \"Chicken Burger\",\n            \"description\": \"Juicy chicken patty layered in a soft bun with fresh veggies.\",\n            \"category\": \"Main Course\",\n            \"price\": 190,\n            \"ingredients\": [\n                \"chicken patty\",\n                \"bun\",\n                \"lettuce\",\n                \"cheese\",\n                \"sauce\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:06.144Z\",\n            \"updatedAt\": \"2026-02-03T09:23:06.144Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be86cd6c6400e2377085\",\n            \"name\": \"Mutton Curry\",\n            \"description\": \"Slow-cooked mutton in a rich and spicy gravy.\",\n            \"category\": \"Main Course\",\n            \"price\": 320,\n            \"ingredients\": [\n                \"mutton\",\n                \"onion\",\n                \"tomato\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 40,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:18.565Z\",\n            \"updatedAt\": \"2026-02-03T09:23:18.565Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be94cd6c6400e2377088\",\n            \"name\": \"Chocolate Cake\",\n            \"description\": \"Soft and moist chocolate-flavored cake.\",\n            \"category\": \"Dessert\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"sugar\",\n                \"eggs\",\n                \"butter\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:32.647Z\",\n            \"updatedAt\": \"2026-02-03T09:23:32.647Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea0cd6c6400e237708b\",\n            \"name\": \"Ice Cream Sundae\",\n            \"description\": \"Vanilla ice cream topped with chocolate syrup and nuts.\",\n            \"category\": \"Dessert\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"ice cream\",\n                \"chocolate syrup\",\n                \"nuts\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:44.855Z\",\n            \"updatedAt\": \"2026-02-03T09:23:44.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea9cd6c6400e237708e\",\n            \"name\": \"Gulab Jamun\",\n            \"description\": \"Soft milk-solid dumplings soaked in sugar syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"milk solids\",\n                \"sugar\",\n                \"water\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:53.357Z\",\n            \"updatedAt\": \"2026-02-03T09:23:53.357Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981beb4cd6c6400e2377091\",\n            \"name\": \"Fruit Salad\",\n            \"description\": \"Fresh seasonal fruits mixed together.\",\n            \"category\": \"Dessert\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"apple\",\n                \"banana\",\n                \"orange\",\n                \"grapes\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 10,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:04.746Z\",\n            \"updatedAt\": \"2026-02-03T09:24:04.746Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bec5cd6c6400e2377094\",\n            \"name\": \"Brownie\",\n            \"description\": \"Dense and fudgy chocolate brownie.\",\n            \"category\": \"Dessert\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"butter\",\n                \"sugar\",\n                \"eggs\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 22,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:21.586Z\",\n            \"updatedAt\": \"2026-02-03T09:24:21.586Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bed0cd6c6400e2377097\",\n            \"name\": \"Pancakes\",\n            \"description\": \"Fluffy pancakes served with syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 150,\n            \"ingredients\": [\n                \"flour\",\n                \"milk\",\n                \"eggs\",\n                \"syrup\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:32.436Z\",\n            \"updatedAt\": \"2026-02-03T09:24:32.436Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bedccd6c6400e237709a\",\n            \"name\": \"Lemon Juice\",\n            \"description\": \"Refreshing lemon drink with a hint of salt.\",\n            \"category\": \"Beverage\",\n            \"price\": 60,\n            \"ingredients\": [\n                \"lemon\",\n                \"water\",\n                \"sugar\",\n                \"salt\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:44.820Z\",\n            \"updatedAt\": \"2026-02-03T09:24:44.820Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bee8cd6c6400e237709d\",\n            \"name\": \"Cold Coffee\",\n            \"description\": \"Chilled coffee blended with milk and ice.\",\n            \"category\": \"Beverage\",\n            \"price\": 110,\n            \"ingredients\": [\n                \"coffee\",\n                \"milk\",\n                \"sugar\",\n                \"ice\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:56.179Z\",\n            \"updatedAt\": \"2026-02-03T09:24:56.179Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bef3cd6c6400e23770a0\",\n            \"name\": \"Mango Milkshake\",\n            \"description\": \"Thick and creamy mango milkshake.\",\n            \"category\": \"Beverage\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"mango\",\n                \"milk\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 6,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:07.498Z\",\n            \"updatedAt\": \"2026-02-03T09:25:07.498Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf00cd6c6400e23770a3\",\n            \"name\": \"Green Tea\",\n            \"description\": \"Light and healthy brewed green tea.\",\n            \"category\": \"Beverage\",\n            \"price\": 70,\n            \"ingredients\": [\n                \"green tea leaves\",\n                \"water\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 4,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:20.855Z\",\n            \"updatedAt\": \"2026-02-03T09:25:20.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf0dcd6c6400e23770a6\",\n            \"name\": \"Orange Juice\",\n            \"description\": \"Freshly squeezed orange juice.\",\n            \"category\": \"Beverage\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"orange\",\n                \"water\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 6,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:33.600Z\",\n            \"updatedAt\": \"2026-02-03T09:25:33.600Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf18cd6c6400e23770a9\",\n            \"name\": \"Soft Drink\",\n            \"description\": \"Chilled carbonated soft beverage.\",\n            \"category\": \"Beverage\",\n            \"price\": 50,\n            \"ingredients\": [\n                \"carbonated water\",\n                \"flavoring\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 2,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:44.202Z\",\n            \"updatedAt\": \"2026-02-03T09:25:44.202Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf21cd6c6400e23770ac\",\n            \"name\": \"Strawberry Smoothie\",\n            \"description\": \"Smooth and refreshing strawberry-based drink.\",\n            \"category\": \"Beverage\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"strawberry\",\n                \"milk\",\n                \"honey\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:53.732Z\",\n            \"updatedAt\": \"2026-02-03T09:25:53.732Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Menu Items (with Filtering)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu?category=Appetizer&availability=true&price=110",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Appetizer"
+                },
+                {
+                  "key": "availability",
+                  "value": "true"
+                },
+                {
+                  "key": "price",
+                  "value": "110"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (with Category Filter)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu?category=Appetizer",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "Appetizer"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2303"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"8ff-/fYP7g8iSEYScaMI7cyh3kxXRuI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:20:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": true,\n    \"totalMenuItems\": 5,\n    \"data\": [\n        {\n            \"_id\": \"6981bd73cd6c6400e2377063\",\n            \"name\": \"Chicken Noodles\",\n            \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n            \"category\": \"Appetizer\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"chicken\",\n                \"noodles\",\n                \"salt\",\n                \"tomato sauce\",\n                \"pepper\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n            \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdbecd6c6400e2377066\",\n            \"name\": \"Veg Spring Rolls\",\n            \"description\": \"Crispy rolls stuffed with seasoned mixed vegetables.\",\n            \"category\": \"Appetizer\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"cabbage\",\n                \"carrot\",\n                \"spring roll sheets\",\n                \"salt\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 12,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:19:58.702Z\",\n            \"updatedAt\": \"2026-02-03T09:19:58.702Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdebcd6c6400e2377069\",\n            \"name\": \"Paneer Tikka\",\n            \"description\": \"Grilled paneer cubes marinated in yogurt and spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 160,\n            \"ingredients\": [\n                \"paneer\",\n                \"curd\",\n                \"spices\",\n                \"capsicum\",\n                \"onion\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:43.519Z\",\n            \"updatedAt\": \"2026-02-03T09:20:43.519Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdf7cd6c6400e237706c\",\n            \"name\": \"Garlic Bread\",\n            \"description\": \"Toasted bread topped with garlic butter and melted cheese.\",\n            \"category\": \"Appetizer\",\n            \"price\": 80,\n            \"ingredients\": [\n                \"bread\",\n                \"butter\",\n                \"garlic\",\n                \"cheese\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 8,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:55.395Z\",\n            \"updatedAt\": \"2026-02-03T09:20:55.395Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be00cd6c6400e237706f\",\n            \"name\": \"Chicken Soup\",\n            \"description\": \"Hot and comforting soup made with chicken and mild spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"chicken\",\n                \"water\",\n                \"salt\",\n                \"pepper\",\n                \"ginger\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:04.223Z\",\n            \"updatedAt\": \"2026-02-03T09:21:04.223Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with Avaliablity Filter)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu?avaliablity=true",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ],
+                  "query": [
+                    {
+                      "key": "avaliablity",
+                      "value": "true"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "10843"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a5b-4Pff9ccAy3cMhO46edlt3Hm6m6I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:21:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": true,\n    \"totalMenuItems\": 25,\n    \"data\": [\n        {\n            \"_id\": \"6981bd73cd6c6400e2377063\",\n            \"name\": \"Chicken Noodles\",\n            \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n            \"category\": \"Appetizer\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"chicken\",\n                \"noodles\",\n                \"salt\",\n                \"tomato sauce\",\n                \"pepper\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n            \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdbecd6c6400e2377066\",\n            \"name\": \"Veg Spring Rolls\",\n            \"description\": \"Crispy rolls stuffed with seasoned mixed vegetables.\",\n            \"category\": \"Appetizer\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"cabbage\",\n                \"carrot\",\n                \"spring roll sheets\",\n                \"salt\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 12,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:19:58.702Z\",\n            \"updatedAt\": \"2026-02-03T09:19:58.702Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdebcd6c6400e2377069\",\n            \"name\": \"Paneer Tikka\",\n            \"description\": \"Grilled paneer cubes marinated in yogurt and spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 160,\n            \"ingredients\": [\n                \"paneer\",\n                \"curd\",\n                \"spices\",\n                \"capsicum\",\n                \"onion\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:43.519Z\",\n            \"updatedAt\": \"2026-02-03T09:20:43.519Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdf7cd6c6400e237706c\",\n            \"name\": \"Garlic Bread\",\n            \"description\": \"Toasted bread topped with garlic butter and melted cheese.\",\n            \"category\": \"Appetizer\",\n            \"price\": 80,\n            \"ingredients\": [\n                \"bread\",\n                \"butter\",\n                \"garlic\",\n                \"cheese\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 8,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:55.395Z\",\n            \"updatedAt\": \"2026-02-03T09:20:55.395Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be00cd6c6400e237706f\",\n            \"name\": \"Chicken Soup\",\n            \"description\": \"Hot and comforting soup made with chicken and mild spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"chicken\",\n                \"water\",\n                \"salt\",\n                \"pepper\",\n                \"ginger\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:04.223Z\",\n            \"updatedAt\": \"2026-02-03T09:21:04.223Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be10cd6c6400e2377072\",\n            \"name\": \"Butter Chicken\",\n            \"description\": \"Creamy tomato-based curry with juicy chicken pieces.\",\n            \"category\": \"Main Course\",\n            \"price\": 280,\n            \"ingredients\": [\n                \"chicken\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 30,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:20.461Z\",\n            \"updatedAt\": \"2026-02-03T09:21:20.461Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be1bcd6c6400e2377075\",\n            \"name\": \"Veg Biryani\",\n            \"description\": \"Fragrant rice cooked with vegetables and aromatic spices.\",\n            \"category\": \"Main Course\",\n            \"price\": 180,\n            \"ingredients\": [\n                \"rice\",\n                \"vegetables\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:31.812Z\",\n            \"updatedAt\": \"2026-02-03T09:21:31.812Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be4fcd6c6400e2377079\",\n            \"name\": \"Chicken Fried Rice\",\n            \"description\": \"Wok-tossed rice with chicken, vegetables, and soy sauce.\",\n            \"category\": \"Main Course\",\n            \"price\": 220,\n            \"ingredients\": [\n                \"rice\",\n                \"chicken\",\n                \"soy sauce\",\n                \"vegetables\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:23.996Z\",\n            \"updatedAt\": \"2026-02-03T09:22:23.996Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be5dcd6c6400e237707c\",\n            \"name\": \"Paneer Butter Masala\",\n            \"description\": \"Rich and creamy curry made with soft paneer cubes.\",\n            \"category\": \"Main Course\",\n            \"price\": 240,\n            \"ingredients\": [\n                \"paneer\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 28,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:37.515Z\",\n            \"updatedAt\": \"2026-02-03T09:22:37.515Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be6dcd6c6400e237707f\",\n            \"name\": \"Veg Pasta\",\n            \"description\": \"Pasta tossed in tangy tomato sauce with fresh vegetables.\",\n            \"category\": \"Main Course\",\n            \"price\": 200,\n            \"ingredients\": [\n                \"pasta\",\n                \"vegetables\",\n                \"tomato sauce\",\n                \"salt\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:53.226Z\",\n            \"updatedAt\": \"2026-02-03T09:22:53.226Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be7acd6c6400e2377082\",\n            \"name\": \"Chicken Burger\",\n            \"description\": \"Juicy chicken patty layered in a soft bun with fresh veggies.\",\n            \"category\": \"Main Course\",\n            \"price\": 190,\n            \"ingredients\": [\n                \"chicken patty\",\n                \"bun\",\n                \"lettuce\",\n                \"cheese\",\n                \"sauce\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:06.144Z\",\n            \"updatedAt\": \"2026-02-03T09:23:06.144Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be86cd6c6400e2377085\",\n            \"name\": \"Mutton Curry\",\n            \"description\": \"Slow-cooked mutton in a rich and spicy gravy.\",\n            \"category\": \"Main Course\",\n            \"price\": 320,\n            \"ingredients\": [\n                \"mutton\",\n                \"onion\",\n                \"tomato\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 40,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:18.565Z\",\n            \"updatedAt\": \"2026-02-03T09:23:18.565Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be94cd6c6400e2377088\",\n            \"name\": \"Chocolate Cake\",\n            \"description\": \"Soft and moist chocolate-flavored cake.\",\n            \"category\": \"Dessert\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"sugar\",\n                \"eggs\",\n                \"butter\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:32.647Z\",\n            \"updatedAt\": \"2026-02-03T09:23:32.647Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea0cd6c6400e237708b\",\n            \"name\": \"Ice Cream Sundae\",\n            \"description\": \"Vanilla ice cream topped with chocolate syrup and nuts.\",\n            \"category\": \"Dessert\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"ice cream\",\n                \"chocolate syrup\",\n                \"nuts\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:44.855Z\",\n            \"updatedAt\": \"2026-02-03T09:23:44.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea9cd6c6400e237708e\",\n            \"name\": \"Gulab Jamun\",\n            \"description\": \"Soft milk-solid dumplings soaked in sugar syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"milk solids\",\n                \"sugar\",\n                \"water\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:53.357Z\",\n            \"updatedAt\": \"2026-02-03T09:23:53.357Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981beb4cd6c6400e2377091\",\n            \"name\": \"Fruit Salad\",\n            \"description\": \"Fresh seasonal fruits mixed together.\",\n            \"category\": \"Dessert\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"apple\",\n                \"banana\",\n                \"orange\",\n                \"grapes\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 10,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:04.746Z\",\n            \"updatedAt\": \"2026-02-03T09:24:04.746Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bec5cd6c6400e2377094\",\n            \"name\": \"Brownie\",\n            \"description\": \"Dense and fudgy chocolate brownie.\",\n            \"category\": \"Dessert\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"butter\",\n                \"sugar\",\n                \"eggs\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 22,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:21.586Z\",\n            \"updatedAt\": \"2026-02-03T09:24:21.586Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bed0cd6c6400e2377097\",\n            \"name\": \"Pancakes\",\n            \"description\": \"Fluffy pancakes served with syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 150,\n            \"ingredients\": [\n                \"flour\",\n                \"milk\",\n                \"eggs\",\n                \"syrup\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:32.436Z\",\n            \"updatedAt\": \"2026-02-03T09:24:32.436Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bedccd6c6400e237709a\",\n            \"name\": \"Lemon Juice\",\n            \"description\": \"Refreshing lemon drink with a hint of salt.\",\n            \"category\": \"Beverage\",\n            \"price\": 60,\n            \"ingredients\": [\n                \"lemon\",\n                \"water\",\n                \"sugar\",\n                \"salt\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:44.820Z\",\n            \"updatedAt\": \"2026-02-03T09:24:44.820Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bee8cd6c6400e237709d\",\n            \"name\": \"Cold Coffee\",\n            \"description\": \"Chilled coffee blended with milk and ice.\",\n            \"category\": \"Beverage\",\n            \"price\": 110,\n            \"ingredients\": [\n                \"coffee\",\n                \"milk\",\n                \"sugar\",\n                \"ice\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:56.179Z\",\n            \"updatedAt\": \"2026-02-03T09:24:56.179Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bef3cd6c6400e23770a0\",\n            \"name\": \"Mango Milkshake\",\n            \"description\": \"Thick and creamy mango milkshake.\",\n            \"category\": \"Beverage\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"mango\",\n                \"milk\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 6,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:07.498Z\",\n            \"updatedAt\": \"2026-02-03T09:25:07.498Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf00cd6c6400e23770a3\",\n            \"name\": \"Green Tea\",\n            \"description\": \"Light and healthy brewed green tea.\",\n            \"category\": \"Beverage\",\n            \"price\": 70,\n            \"ingredients\": [\n                \"green tea leaves\",\n                \"water\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 4,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:20.855Z\",\n            \"updatedAt\": \"2026-02-03T09:25:20.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf0dcd6c6400e23770a6\",\n            \"name\": \"Orange Juice\",\n            \"description\": \"Freshly squeezed orange juice.\",\n            \"category\": \"Beverage\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"orange\",\n                \"water\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 6,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:33.600Z\",\n            \"updatedAt\": \"2026-02-03T09:25:33.600Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf18cd6c6400e23770a9\",\n            \"name\": \"Soft Drink\",\n            \"description\": \"Chilled carbonated soft beverage.\",\n            \"category\": \"Beverage\",\n            \"price\": 50,\n            \"ingredients\": [\n                \"carbonated water\",\n                \"flavoring\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 2,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:44.202Z\",\n            \"updatedAt\": \"2026-02-03T09:25:44.202Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf21cd6c6400e23770ac\",\n            \"name\": \"Strawberry Smoothie\",\n            \"description\": \"Smooth and refreshing strawberry-based drink.\",\n            \"category\": \"Beverage\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"strawberry\",\n                \"milk\",\n                \"honey\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:53.732Z\",\n            \"updatedAt\": \"2026-02-03T09:25:53.732Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with Price Filter)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu?price=110",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ],
+                  "query": [
+                    {
+                      "key": "price",
+                      "value": "110"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "7035"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b7b-zXBPvQcXubjxhvUS0BCyi8pZo/w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:22:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": true,\n    \"totalMenuItems\": 16,\n    \"data\": [\n        {\n            \"_id\": \"6981bd73cd6c6400e2377063\",\n            \"name\": \"Chicken Noodles\",\n            \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n            \"category\": \"Appetizer\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"chicken\",\n                \"noodles\",\n                \"salt\",\n                \"tomato sauce\",\n                \"pepper\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n            \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bdebcd6c6400e2377069\",\n            \"name\": \"Paneer Tikka\",\n            \"description\": \"Grilled paneer cubes marinated in yogurt and spices.\",\n            \"category\": \"Appetizer\",\n            \"price\": 160,\n            \"ingredients\": [\n                \"paneer\",\n                \"curd\",\n                \"spices\",\n                \"capsicum\",\n                \"onion\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:20:43.519Z\",\n            \"updatedAt\": \"2026-02-03T09:20:43.519Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be10cd6c6400e2377072\",\n            \"name\": \"Butter Chicken\",\n            \"description\": \"Creamy tomato-based curry with juicy chicken pieces.\",\n            \"category\": \"Main Course\",\n            \"price\": 280,\n            \"ingredients\": [\n                \"chicken\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 30,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:20.461Z\",\n            \"updatedAt\": \"2026-02-03T09:21:20.461Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be1bcd6c6400e2377075\",\n            \"name\": \"Veg Biryani\",\n            \"description\": \"Fragrant rice cooked with vegetables and aromatic spices.\",\n            \"category\": \"Main Course\",\n            \"price\": 180,\n            \"ingredients\": [\n                \"rice\",\n                \"vegetables\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:31.812Z\",\n            \"updatedAt\": \"2026-02-03T09:21:31.812Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be4fcd6c6400e2377079\",\n            \"name\": \"Chicken Fried Rice\",\n            \"description\": \"Wok-tossed rice with chicken, vegetables, and soy sauce.\",\n            \"category\": \"Main Course\",\n            \"price\": 220,\n            \"ingredients\": [\n                \"rice\",\n                \"chicken\",\n                \"soy sauce\",\n                \"vegetables\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:23.996Z\",\n            \"updatedAt\": \"2026-02-03T09:22:23.996Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be5dcd6c6400e237707c\",\n            \"name\": \"Paneer Butter Masala\",\n            \"description\": \"Rich and creamy curry made with soft paneer cubes.\",\n            \"category\": \"Main Course\",\n            \"price\": 240,\n            \"ingredients\": [\n                \"paneer\",\n                \"butter\",\n                \"tomato\",\n                \"cream\",\n                \"spices\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 28,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:37.515Z\",\n            \"updatedAt\": \"2026-02-03T09:22:37.515Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be6dcd6c6400e237707f\",\n            \"name\": \"Veg Pasta\",\n            \"description\": \"Pasta tossed in tangy tomato sauce with fresh vegetables.\",\n            \"category\": \"Main Course\",\n            \"price\": 200,\n            \"ingredients\": [\n                \"pasta\",\n                \"vegetables\",\n                \"tomato sauce\",\n                \"salt\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 18,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:53.226Z\",\n            \"updatedAt\": \"2026-02-03T09:22:53.226Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be7acd6c6400e2377082\",\n            \"name\": \"Chicken Burger\",\n            \"description\": \"Juicy chicken patty layered in a soft bun with fresh veggies.\",\n            \"category\": \"Main Course\",\n            \"price\": 190,\n            \"ingredients\": [\n                \"chicken patty\",\n                \"bun\",\n                \"lettuce\",\n                \"cheese\",\n                \"sauce\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:06.144Z\",\n            \"updatedAt\": \"2026-02-03T09:23:06.144Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be86cd6c6400e2377085\",\n            \"name\": \"Mutton Curry\",\n            \"description\": \"Slow-cooked mutton in a rich and spicy gravy.\",\n            \"category\": \"Main Course\",\n            \"price\": 320,\n            \"ingredients\": [\n                \"mutton\",\n                \"onion\",\n                \"tomato\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 40,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:18.565Z\",\n            \"updatedAt\": \"2026-02-03T09:23:18.565Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be94cd6c6400e2377088\",\n            \"name\": \"Chocolate Cake\",\n            \"description\": \"Soft and moist chocolate-flavored cake.\",\n            \"category\": \"Dessert\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"sugar\",\n                \"eggs\",\n                \"butter\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:32.647Z\",\n            \"updatedAt\": \"2026-02-03T09:23:32.647Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea0cd6c6400e237708b\",\n            \"name\": \"Ice Cream Sundae\",\n            \"description\": \"Vanilla ice cream topped with chocolate syrup and nuts.\",\n            \"category\": \"Dessert\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"ice cream\",\n                \"chocolate syrup\",\n                \"nuts\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:44.855Z\",\n            \"updatedAt\": \"2026-02-03T09:23:44.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bec5cd6c6400e2377094\",\n            \"name\": \"Brownie\",\n            \"description\": \"Dense and fudgy chocolate brownie.\",\n            \"category\": \"Dessert\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"butter\",\n                \"sugar\",\n                \"eggs\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 22,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:21.586Z\",\n            \"updatedAt\": \"2026-02-03T09:24:21.586Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bed0cd6c6400e2377097\",\n            \"name\": \"Pancakes\",\n            \"description\": \"Fluffy pancakes served with syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 150,\n            \"ingredients\": [\n                \"flour\",\n                \"milk\",\n                \"eggs\",\n                \"syrup\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:32.436Z\",\n            \"updatedAt\": \"2026-02-03T09:24:32.436Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bee8cd6c6400e237709d\",\n            \"name\": \"Cold Coffee\",\n            \"description\": \"Chilled coffee blended with milk and ice.\",\n            \"category\": \"Beverage\",\n            \"price\": 110,\n            \"ingredients\": [\n                \"coffee\",\n                \"milk\",\n                \"sugar\",\n                \"ice\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:56.179Z\",\n            \"updatedAt\": \"2026-02-03T09:24:56.179Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bef3cd6c6400e23770a0\",\n            \"name\": \"Mango Milkshake\",\n            \"description\": \"Thick and creamy mango milkshake.\",\n            \"category\": \"Beverage\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"mango\",\n                \"milk\",\n                \"sugar\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 6,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:07.498Z\",\n            \"updatedAt\": \"2026-02-03T09:25:07.498Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bf21cd6c6400e23770ac\",\n            \"name\": \"Strawberry Smoothie\",\n            \"description\": \"Smooth and refreshing strawberry-based drink.\",\n            \"category\": \"Beverage\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"strawberry\",\n                \"milk\",\n                \"honey\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 7,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:25:53.732Z\",\n            \"updatedAt\": \"2026-02-03T09:25:53.732Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with All Filters)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu?category=Dessert&avaliablity=true&price=60",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "Dessert"
+                    },
+                    {
+                      "key": "avaliablity",
+                      "value": "true"
+                    },
+                    {
+                      "key": "price",
+                      "value": "60"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2585"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a19-GXnbCJAtvh9HN8HU5Ub1XUbb32Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:23:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": true,\n    \"totalMenuItems\": 6,\n    \"data\": [\n        {\n            \"_id\": \"6981be94cd6c6400e2377088\",\n            \"name\": \"Chocolate Cake\",\n            \"description\": \"Soft and moist chocolate-flavored cake.\",\n            \"category\": \"Dessert\",\n            \"price\": 140,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"sugar\",\n                \"eggs\",\n                \"butter\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:32.647Z\",\n            \"updatedAt\": \"2026-02-03T09:23:32.647Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea0cd6c6400e237708b\",\n            \"name\": \"Ice Cream Sundae\",\n            \"description\": \"Vanilla ice cream topped with chocolate syrup and nuts.\",\n            \"category\": \"Dessert\",\n            \"price\": 130,\n            \"ingredients\": [\n                \"ice cream\",\n                \"chocolate syrup\",\n                \"nuts\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 5,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:44.855Z\",\n            \"updatedAt\": \"2026-02-03T09:23:44.855Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bea9cd6c6400e237708e\",\n            \"name\": \"Gulab Jamun\",\n            \"description\": \"Soft milk-solid dumplings soaked in sugar syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 90,\n            \"ingredients\": [\n                \"milk solids\",\n                \"sugar\",\n                \"water\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:23:53.357Z\",\n            \"updatedAt\": \"2026-02-03T09:23:53.357Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981beb4cd6c6400e2377091\",\n            \"name\": \"Fruit Salad\",\n            \"description\": \"Fresh seasonal fruits mixed together.\",\n            \"category\": \"Dessert\",\n            \"price\": 100,\n            \"ingredients\": [\n                \"apple\",\n                \"banana\",\n                \"orange\",\n                \"grapes\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 10,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:04.746Z\",\n            \"updatedAt\": \"2026-02-03T09:24:04.746Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bec5cd6c6400e2377094\",\n            \"name\": \"Brownie\",\n            \"description\": \"Dense and fudgy chocolate brownie.\",\n            \"category\": \"Dessert\",\n            \"price\": 120,\n            \"ingredients\": [\n                \"flour\",\n                \"cocoa powder\",\n                \"butter\",\n                \"sugar\",\n                \"eggs\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 22,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:21.586Z\",\n            \"updatedAt\": \"2026-02-03T09:24:21.586Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981bed0cd6c6400e2377097\",\n            \"name\": \"Pancakes\",\n            \"description\": \"Fluffy pancakes served with syrup.\",\n            \"category\": \"Dessert\",\n            \"price\": 150,\n            \"ingredients\": [\n                \"flour\",\n                \"milk\",\n                \"eggs\",\n                \"syrup\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 15,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:24:32.436Z\",\n            \"updatedAt\": \"2026-02-03T09:24:32.436Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Not Found Response (no Data Found)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu?avaliablity=false",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu"
+                  ],
+                  "query": [
+                    {
+                      "key": "avaliablity",
+                      "value": "false"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "61"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3d-pXHTyxPTBR6xiPWUZPUidkf0Bb8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:25:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"filteredData\": true,\n    \"msg\": \"No data found after filteration\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Menu Items (with Text Indexing)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/search?q=rice",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "rice"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (with Searching a Query)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu/search?q=rice",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "rice"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "952"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3b8-4qD8q1B5h9A7v98P7nAlgKpyqk8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 13:14:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Searched for the query: rice\",\n    \"searchedData\": [\n        {\n            \"_id\": \"6981be4fcd6c6400e2377079\",\n            \"name\": \"Chicken Fried Rice\",\n            \"description\": \"Wok-tossed rice with chicken, vegetables, and soy sauce.\",\n            \"category\": \"Main Course\",\n            \"price\": 220,\n            \"ingredients\": [\n                \"rice\",\n                \"chicken\",\n                \"soy sauce\",\n                \"vegetables\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 20,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:22:23.996Z\",\n            \"updatedAt\": \"2026-02-03T09:22:23.996Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6981be1bcd6c6400e2377075\",\n            \"name\": \"Veg Biryani\",\n            \"description\": \"Fragrant rice cooked with vegetables and aromatic spices.\",\n            \"category\": \"Main Course\",\n            \"price\": 180,\n            \"ingredients\": [\n                \"rice\",\n                \"vegetables\",\n                \"spices\",\n                \"oil\"\n            ],\n            \"isAvailable\": true,\n            \"preparationTime\": 25,\n            \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n            \"createdAt\": \"2026-02-03T09:21:31.812Z\",\n            \"updatedAt\": \"2026-02-03T09:21:31.812Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Not Found Response (with no Data for the Query)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu/search?q=cat",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "cat"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "51"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"33-LWeDPXMbUHFZACJcVqovmKRyuE0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 13:18:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"searchedData\": \"No data found for the query: cat\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Menu Item By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/6981bd73cd6c6400e2377063",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                "6981bd73cd6c6400e2377063"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (found Single Menu Item)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu/6981bd73cd6c6400e2377063",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6981bd73cd6c6400e2377063"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "511"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1ff-m9qeBNVzujre+Y2O8DR8tIAExUE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:29:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Menu item found!\",\n    \"menuData\": {\n        \"_id\": \"6981bd73cd6c6400e2377063\",\n        \"name\": \"Chicken Noodles\",\n        \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n        \"category\": \"Appetizer\",\n        \"price\": 120,\n        \"ingredients\": [\n            \"chicken\",\n            \"noodles\",\n            \"salt\",\n            \"tomato sauce\",\n            \"pepper\"\n        ],\n        \"isAvailable\": true,\n        \"preparationTime\": 15,\n        \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n        \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n        \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Menu ID)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/menu/6981bd73cd6c6400e237",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6981bd73cd6c6400e237"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 04 Feb 2026 16:30:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid MenuID (or) MenuID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Menu Item",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Strawberry Smoothie\",\r\n    \"description\": \"Smooth and refreshing strawberry-based drink.\",\r\n    \"category\": \"Beverage\",\r\n    \"price\": 140,\r\n    \"ingredients\": [\"strawberry\", \"milk\", \"honey\"],\r\n    \"preparationTime\": 7\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successfully Response (created a New Menu Item)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Chicken Noodles\",\r\n    \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\r\n    \"category\": \"Appetizer\",\r\n    \"price\": 120,\r\n    \"ingredients\": [\"chicken\", \"noodles\", \"salt\", \"tomato sauce\", \"pepper\"],\r\n    \"preparationTime\": 15\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/menu/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "522"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"20a-M12/0j4vf6lpvh814f8VtDMHXQ8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Feb 2026 09:18:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Menu item created Successfully!\",\n    \"data\": {\n        \"name\": \"Chicken Noodles\",\n        \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n        \"category\": \"Appetizer\",\n        \"price\": 120,\n        \"ingredients\": [\n            \"chicken\",\n            \"noodles\",\n            \"salt\",\n            \"tomato sauce\",\n            \"pepper\"\n        ],\n        \"isAvailable\": true,\n        \"preparationTime\": 15,\n        \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n        \"_id\": \"6981bd73cd6c6400e2377063\",\n        \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n        \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Conflict Response (already Exists)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Veg Biryani\",\r\n    \"description\": \"Fragrant rice cooked with vegetables and aromatic spices.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 180,\r\n    \"ingredients\": [\"rice\", \"vegetables\", \"spices\", \"oil\"],\r\n    \"preparationTime\": 25\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/menu/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    ""
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "68"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"44-qFCXkCebJdyz1yNlqUICDPIuZ2g\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 03 Feb 2026 09:21:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Name: Veg Biryani in Category: Main Course already exists!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Menu Item (with ID)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Veg Fried Rice\",\r\n    \"description\": \"Wok-tossed rice with fresh vegetables and light seasoning.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 190,\r\n    \"ingredients\": [\"rice\", \"vegetables\", \"soy sauce\", \"oil\"],\r\n    \"preparationTime\": 20\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/6984b5f95d15403e43e2276d",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                "6984b5f95d15403e43e2276d"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (update Successful)",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Veg Fried Rice\",\r\n    \"description\": \"Wok-tossed rice with fresh vegetables and light seasoning.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 190,\r\n    \"ingredients\": [\"rice\", \"vegetables\", \"soy sauce\", \"oil\"],\r\n    \"preparationTime\": 20\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/menu/6984b5f95d15403e43e2276d",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b5f95d15403e43e2276d"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "65"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"41-VuxY/NjwFSP5X4Uasik57gZ0ByA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 16:48:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Updated the menu item with ID: 6984b5f95d15403e43e2276d\"\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Menu ID)",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Veg Fried Rice\",\r\n    \"description\": \"Wok-tossed rice with fresh vegetables and light seasoning.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 190,\r\n    \"ingredients\": [\"rice\", \"vegetables\", \"soy sauce\", \"oil\"],\r\n    \"preparationTime\": 20\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/menu/6984b5f95d15403e43",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b5f95d15403e43"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 16:53:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid MenuID (or) MenuID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Menu Item (with ID)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Chicken Tikka Masala\",\r\n    \"description\": \"Grilled chicken pieces simmered in a creamy tomato gravy.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 290,\r\n    \"ingredients\": [\"chicken\", \"curd\", \"tomato\", \"cream\", \"spices\"],\r\n    \"preparationTime\": 35\r\n  }"
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/6984b5f95d15403e43e2276d",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                "6984b5f95d15403e43e2276d"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (deleted The Menu Item)",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Chicken Tikka Masala\",\r\n    \"description\": \"Grilled chicken pieces simmered in a creamy tomato gravy.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 290,\r\n    \"ingredients\": [\"chicken\", \"curd\", \"tomato\", \"cream\", \"spices\"],\r\n    \"preparationTime\": 35\r\n  }"
+                },
+                "url": {
+                  "raw": "localhost:3000/menu/6984b60a5d15403e43e22770",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b60a5d15403e43e22770"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "65"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"41-JbXTc/hROdwKsRxMdPlo10LeEno\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 15:42:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Deleted the menu item with ID: 6984b60a5d15403e43e22770\"\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Menu ID)",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Chicken Tikka Masala\",\r\n    \"description\": \"Grilled chicken pieces simmered in a creamy tomato gravy.\",\r\n    \"category\": \"Main Course\",\r\n    \"price\": 290,\r\n    \"ingredients\": [\"chicken\", \"curd\", \"tomato\", \"cream\", \"spices\"],\r\n    \"preparationTime\": 35\r\n  }"
+                },
+                "url": {
+                  "raw": "localhost:3000/menu/6984b60a5d15403e43e",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b60a5d15403e43e"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 05 Feb 2026 15:43:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid MenuID (or) MenuID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Toggle Availability (with ID)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/menu/6981bdbecd6c6400e2377066/availability",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "menu",
+                "6981bdbecd6c6400e2377066",
+                "availability"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (toggled Successfully)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/menu/6981bdbecd6c6400e2377066/availability",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6981bdbecd6c6400e2377066",
+                    "availability"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "53"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"35-gvg1YG89AGXzlt+Dk8YZosl784Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 06 Feb 2026 06:38:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"MenuItem availability toggled successfully!\"\n}"
+            },
+            {
+              "name": "Not Found Response (menu ID Does Not Exist)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/menu/6984b5f95d15/availability",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b5f95d15",
+                    "availability"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "47"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f-1vTtz2m26uB3Z8SHnY4D0bzj13Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 06 Feb 2026 06:38:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid MenuID (or) MenuID not found!\"\n}"
+            },
+            {
+              "name": "Not Found Response (does Not Exist)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/menu/6984b5f95d15403e43e2276d/availability",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "menu",
+                    "6984b5f95d15403e43e2276d",
+                    "availability"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "66"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"42-rbySAzEwuhG4YxiixeynhmJHvhk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 06 Feb 2026 06:37:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"MenuItem not found with the ID: 6984b5f95d15403e43e2276d\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Create a new order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/orders",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (order Creation)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "391"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"187-PKdT8xhMK685HIygPfcndlukMXU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Feb 2026 05:30:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Order created successfully!\",\n    \"orderData\": {\n        \"items\": [\n            {\n                \"menuItem\": \"6981be94cd6c6400e2377088\",\n                \"quantity\": 5,\n                \"price\": 140,\n                \"_id\": \"698970d88ea0993b79ca1ede\"\n            }\n        ],\n        \"totalAmount\": 700,\n        \"status\": \"Preparing\",\n        \"customerName\": \"Olivia Taylor\",\n        \"tableNumber\": 7,\n        \"_id\": \"698970d88ea0993b79ca1edd\",\n        \"orderNumber\": \"ORD-964779\",\n        \"createdAt\": \"2026-02-09T05:30:00.816Z\",\n        \"updatedAt\": \"2026-02-09T05:30:00.816Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Conflict Response (table Occupied)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981beb4cd6c6400e2377091\", \"quantity\": 1, \"price\": 100 }\r\n    ],\r\n    \"status\": \"Pending\",\r\n    \"customerName\": \"Chris Moore\",\r\n    \"tableNumber\": 12\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "61"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3d-v0Fth9SHcWcEyaLkdwOWsgzQWmc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Feb 2026 06:24:14 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Table is occupied, try with a different tableNumber\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Orders (with Pagiantion and Filtering)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/orders",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (with All Orders)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "4414"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"113e-8TiTbtqQdScArvH+V5hYpY50OHw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 06:27:30 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"hasFilter\": false,\n    \"hasPagination\": false,\n    \"data\": [\n        {\n            \"_id\": \"69880f2e0813ba1fefbaa966\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be5dcd6c6400e237707c\",\n                    \"quantity\": 2,\n                    \"price\": 240,\n                    \"_id\": \"69880f2e0813ba1fefbaa967\"\n                },\n                {\n                    \"menuItem\": \"6981bd73cd6c6400e2377063\",\n                    \"quantity\": 1,\n                    \"price\": 120,\n                    \"_id\": \"69880f2e0813ba1fefbaa968\"\n                }\n            ],\n            \"totalAmount\": 600,\n            \"status\": \"Pending\",\n            \"customerName\": \"John Doe\",\n            \"tableNumber\": 3,\n            \"orderNumber\": \"ORD-230289\",\n            \"createdAt\": \"2026-02-08T04:21:02.226Z\",\n            \"updatedAt\": \"2026-02-08T04:21:02.226Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989674c8ea0993b79ca1ec6\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981bdbecd6c6400e2377066\",\n                    \"quantity\": 6,\n                    \"price\": 90,\n                    \"_id\": \"6989674c8ea0993b79ca1ec7\"\n                }\n            ],\n            \"totalAmount\": 540,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Jane Smith\",\n            \"tableNumber\": 5,\n            \"orderNumber\": \"ORD-173629\",\n            \"createdAt\": \"2026-02-09T04:49:16.635Z\",\n            \"updatedAt\": \"2026-02-09T04:49:16.635Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698967a58ea0993b79ca1ec9\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981bdebcd6c6400e2377069\",\n                    \"quantity\": 2,\n                    \"price\": 160,\n                    \"_id\": \"698967a58ea0993b79ca1eca\"\n                },\n                {\n                    \"menuItem\": \"6981bdf7cd6c6400e237706c\",\n                    \"quantity\": 6,\n                    \"price\": 80,\n                    \"_id\": \"698967a58ea0993b79ca1ecb\"\n                }\n            ],\n            \"totalAmount\": 800,\n            \"status\": \"Pending\",\n            \"customerName\": \"Robert Brown\",\n            \"tableNumber\": 2,\n            \"orderNumber\": \"ORD-012389\",\n            \"createdAt\": \"2026-02-09T04:50:45.193Z\",\n            \"updatedAt\": \"2026-02-09T04:50:45.193Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698967db8ea0993b79ca1ecd\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be00cd6c6400e237706f\",\n                    \"quantity\": 1,\n                    \"price\": 100,\n                    \"_id\": \"698967db8ea0993b79ca1ece\"\n                }\n            ],\n            \"totalAmount\": 100,\n            \"status\": \"Ready\",\n            \"customerName\": \"Emily Davis\",\n            \"tableNumber\": 8,\n            \"orderNumber\": \"ORD-154499\",\n            \"createdAt\": \"2026-02-09T04:51:39.829Z\",\n            \"updatedAt\": \"2026-02-09T04:51:39.829Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698968188ea0993b79ca1ed0\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be1bcd6c6400e2377075\",\n                    \"quantity\": 4,\n                    \"price\": 180,\n                    \"_id\": \"698968188ea0993b79ca1ed1\"\n                }\n            ],\n            \"totalAmount\": 720,\n            \"status\": \"Pending\",\n            \"customerName\": \"Michael Clark\",\n            \"tableNumber\": 6,\n            \"orderNumber\": \"ORD-577687\",\n            \"createdAt\": \"2026-02-09T04:52:40.907Z\",\n            \"updatedAt\": \"2026-02-09T04:52:40.907Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989686d8ea0993b79ca1ed3\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be4fcd6c6400e2377079\",\n                    \"quantity\": 2,\n                    \"price\": 220,\n                    \"_id\": \"6989686d8ea0993b79ca1ed4\"\n                },\n                {\n                    \"menuItem\": \"6981be6dcd6c6400e237707f\",\n                    \"quantity\": 1,\n                    \"price\": 200,\n                    \"_id\": \"6989686d8ea0993b79ca1ed5\"\n                }\n            ],\n            \"totalAmount\": 640,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Alice Johnson\",\n            \"tableNumber\": 1,\n            \"orderNumber\": \"ORD-186566\",\n            \"createdAt\": \"2026-02-09T04:54:05.117Z\",\n            \"updatedAt\": \"2026-02-09T04:54:05.117Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989706c8ea0993b79ca1ed7\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be7acd6c6400e2377082\",\n                    \"quantity\": 2,\n                    \"price\": 190,\n                    \"_id\": \"6989706c8ea0993b79ca1ed8\"\n                }\n            ],\n            \"totalAmount\": 380,\n            \"status\": \"Pending\",\n            \"customerName\": \"David Wilson\",\n            \"tableNumber\": 9,\n            \"orderNumber\": \"ORD-912574\",\n            \"createdAt\": \"2026-02-09T05:28:12.799Z\",\n            \"updatedAt\": \"2026-02-09T05:28:12.799Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970998ea0993b79ca1eda\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be86cd6c6400e2377085\",\n                    \"quantity\": 3,\n                    \"price\": 320,\n                    \"_id\": \"698970998ea0993b79ca1edb\"\n                }\n            ],\n            \"totalAmount\": 960,\n            \"status\": \"Ready\",\n            \"customerName\": \"Sophia Martinez\",\n            \"tableNumber\": 4,\n            \"orderNumber\": \"ORD-869158\",\n            \"createdAt\": \"2026-02-09T05:28:57.610Z\",\n            \"updatedAt\": \"2026-02-09T05:28:57.610Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970d88ea0993b79ca1edd\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"698970d88ea0993b79ca1ede\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-964779\",\n            \"createdAt\": \"2026-02-09T05:30:00.816Z\",\n            \"updatedAt\": \"2026-02-09T05:30:00.816Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698971778ea0993b79ca1ee0\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981beb4cd6c6400e2377091\",\n                    \"quantity\": 1,\n                    \"price\": 100,\n                    \"_id\": \"698971778ea0993b79ca1ee1\"\n                }\n            ],\n            \"totalAmount\": 100,\n            \"status\": \"Pending\",\n            \"customerName\": \"Chris Moore\",\n            \"tableNumber\": 12,\n            \"orderNumber\": \"ORD-160624\",\n            \"createdAt\": \"2026-02-09T05:32:39.300Z\",\n            \"updatedAt\": \"2026-02-09T05:32:39.300Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69897d8e43ce1d3f7d4c52fa\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981beb4cd6c6400e2377091\",\n                    \"quantity\": 1,\n                    \"price\": 100,\n                    \"_id\": \"69897d8e43ce1d3f7d4c52fb\"\n                }\n            ],\n            \"totalAmount\": 100,\n            \"status\": \"Pending\",\n            \"customerName\": \"Chris Moore\",\n            \"tableNumber\": 12,\n            \"orderNumber\": \"ORD-418379\",\n            \"createdAt\": \"2026-02-09T06:24:14.936Z\",\n            \"updatedAt\": \"2026-02-09T06:24:14.936Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69897e2637376fe73452d4e1\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"69897e2637376fe73452d4e2\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-588980\",\n            \"createdAt\": \"2026-02-09T06:26:46.159Z\",\n            \"updatedAt\": \"2026-02-09T06:26:46.159Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with Status Filtering)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders?status=Preparing",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "Preparing"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1511"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5e7-+aF545Nv6D/YEP6GKWqSOsv3Psw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 06:28:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"hasFilter\": true,\n    \"hasPagination\": false,\n    \"data\": [\n        {\n            \"_id\": \"6989674c8ea0993b79ca1ec6\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981bdbecd6c6400e2377066\",\n                    \"quantity\": 6,\n                    \"price\": 90,\n                    \"_id\": \"6989674c8ea0993b79ca1ec7\"\n                }\n            ],\n            \"totalAmount\": 540,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Jane Smith\",\n            \"tableNumber\": 5,\n            \"orderNumber\": \"ORD-173629\",\n            \"createdAt\": \"2026-02-09T04:49:16.635Z\",\n            \"updatedAt\": \"2026-02-09T04:49:16.635Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989686d8ea0993b79ca1ed3\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be4fcd6c6400e2377079\",\n                    \"quantity\": 2,\n                    \"price\": 220,\n                    \"_id\": \"6989686d8ea0993b79ca1ed4\"\n                },\n                {\n                    \"menuItem\": \"6981be6dcd6c6400e237707f\",\n                    \"quantity\": 1,\n                    \"price\": 200,\n                    \"_id\": \"6989686d8ea0993b79ca1ed5\"\n                }\n            ],\n            \"totalAmount\": 640,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Alice Johnson\",\n            \"tableNumber\": 1,\n            \"orderNumber\": \"ORD-186566\",\n            \"createdAt\": \"2026-02-09T04:54:05.117Z\",\n            \"updatedAt\": \"2026-02-09T04:54:05.117Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970d88ea0993b79ca1edd\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"698970d88ea0993b79ca1ede\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-964779\",\n            \"createdAt\": \"2026-02-09T05:30:00.816Z\",\n            \"updatedAt\": \"2026-02-09T05:30:00.816Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69897e2637376fe73452d4e1\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"69897e2637376fe73452d4e2\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-588980\",\n            \"createdAt\": \"2026-02-09T06:26:46.159Z\",\n            \"updatedAt\": \"2026-02-09T06:26:46.159Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with Pagination)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders?page=2&limit=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "2"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1907"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"773-6pb952kgO7SpSjPoGRawSY/+gLw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 06:31:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"hasFilter\": false,\n    \"hasPagination\": true,\n    \"totalOrders\": 12,\n    \"totalPages\": 3,\n    \"currentPage\": 2,\n    \"limit\": 5,\n    \"data\": [\n        {\n            \"_id\": \"6989686d8ea0993b79ca1ed3\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be4fcd6c6400e2377079\",\n                    \"quantity\": 2,\n                    \"price\": 220,\n                    \"_id\": \"6989686d8ea0993b79ca1ed4\"\n                },\n                {\n                    \"menuItem\": \"6981be6dcd6c6400e237707f\",\n                    \"quantity\": 1,\n                    \"price\": 200,\n                    \"_id\": \"6989686d8ea0993b79ca1ed5\"\n                }\n            ],\n            \"totalAmount\": 640,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Alice Johnson\",\n            \"tableNumber\": 1,\n            \"orderNumber\": \"ORD-186566\",\n            \"createdAt\": \"2026-02-09T04:54:05.117Z\",\n            \"updatedAt\": \"2026-02-09T04:54:05.117Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989706c8ea0993b79ca1ed7\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be7acd6c6400e2377082\",\n                    \"quantity\": 2,\n                    \"price\": 190,\n                    \"_id\": \"6989706c8ea0993b79ca1ed8\"\n                }\n            ],\n            \"totalAmount\": 380,\n            \"status\": \"Pending\",\n            \"customerName\": \"David Wilson\",\n            \"tableNumber\": 9,\n            \"orderNumber\": \"ORD-912574\",\n            \"createdAt\": \"2026-02-09T05:28:12.799Z\",\n            \"updatedAt\": \"2026-02-09T05:28:12.799Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970998ea0993b79ca1eda\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be86cd6c6400e2377085\",\n                    \"quantity\": 3,\n                    \"price\": 320,\n                    \"_id\": \"698970998ea0993b79ca1edb\"\n                }\n            ],\n            \"totalAmount\": 960,\n            \"status\": \"Ready\",\n            \"customerName\": \"Sophia Martinez\",\n            \"tableNumber\": 4,\n            \"orderNumber\": \"ORD-869158\",\n            \"createdAt\": \"2026-02-09T05:28:57.610Z\",\n            \"updatedAt\": \"2026-02-09T05:28:57.610Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970d88ea0993b79ca1edd\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"698970d88ea0993b79ca1ede\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-964779\",\n            \"createdAt\": \"2026-02-09T05:30:00.816Z\",\n            \"updatedAt\": \"2026-02-09T05:30:00.816Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698971778ea0993b79ca1ee0\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981beb4cd6c6400e2377091\",\n                    \"quantity\": 1,\n                    \"price\": 100,\n                    \"_id\": \"698971778ea0993b79ca1ee1\"\n                }\n            ],\n            \"totalAmount\": 100,\n            \"status\": \"Pending\",\n            \"customerName\": \"Chris Moore\",\n            \"tableNumber\": 12,\n            \"orderNumber\": \"ORD-160624\",\n            \"createdAt\": \"2026-02-09T05:32:39.300Z\",\n            \"updatedAt\": \"2026-02-09T05:32:39.300Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Successful Response (with both Filtering and Pagination)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders?status=Preparing&page=1&limit=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "Preparing"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1568"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"620-NVVIWggOmcEQ0MCCY28xyMOcBS8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 06:30:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"hasFilter\": true,\n    \"hasPagination\": true,\n    \"totalOrders\": 12,\n    \"totalPages\": 3,\n    \"currentPage\": 1,\n    \"limit\": 5,\n    \"data\": [\n        {\n            \"_id\": \"6989674c8ea0993b79ca1ec6\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981bdbecd6c6400e2377066\",\n                    \"quantity\": 6,\n                    \"price\": 90,\n                    \"_id\": \"6989674c8ea0993b79ca1ec7\"\n                }\n            ],\n            \"totalAmount\": 540,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Jane Smith\",\n            \"tableNumber\": 5,\n            \"orderNumber\": \"ORD-173629\",\n            \"createdAt\": \"2026-02-09T04:49:16.635Z\",\n            \"updatedAt\": \"2026-02-09T04:49:16.635Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6989686d8ea0993b79ca1ed3\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be4fcd6c6400e2377079\",\n                    \"quantity\": 2,\n                    \"price\": 220,\n                    \"_id\": \"6989686d8ea0993b79ca1ed4\"\n                },\n                {\n                    \"menuItem\": \"6981be6dcd6c6400e237707f\",\n                    \"quantity\": 1,\n                    \"price\": 200,\n                    \"_id\": \"6989686d8ea0993b79ca1ed5\"\n                }\n            ],\n            \"totalAmount\": 640,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Alice Johnson\",\n            \"tableNumber\": 1,\n            \"orderNumber\": \"ORD-186566\",\n            \"createdAt\": \"2026-02-09T04:54:05.117Z\",\n            \"updatedAt\": \"2026-02-09T04:54:05.117Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"698970d88ea0993b79ca1edd\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"698970d88ea0993b79ca1ede\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-964779\",\n            \"createdAt\": \"2026-02-09T05:30:00.816Z\",\n            \"updatedAt\": \"2026-02-09T05:30:00.816Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69897e2637376fe73452d4e1\",\n            \"items\": [\n                {\n                    \"menuItem\": \"6981be94cd6c6400e2377088\",\n                    \"quantity\": 5,\n                    \"price\": 140,\n                    \"_id\": \"69897e2637376fe73452d4e2\"\n                }\n            ],\n            \"totalAmount\": 700,\n            \"status\": \"Preparing\",\n            \"customerName\": \"Olivia Taylor\",\n            \"tableNumber\": 7,\n            \"orderNumber\": \"ORD-588980\",\n            \"createdAt\": \"2026-02-09T06:26:46.159Z\",\n            \"updatedAt\": \"2026-02-09T06:26:46.159Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Not Found Reponse (page does not Exist)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders?page=10&limit=5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "10"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "5"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "30"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e-005Bag2hfeK9FnsKd6Y5PWuj2Ms\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 06:32:36 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Page does not exist!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Single Order Details (with Populated Menu Details)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/orders/69880f2e0813ba1fefbaa966",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "orders",
+                "69880f2e0813ba1fefbaa966"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (with Populated Menu Details)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders/69880f2e0813ba1fefbaa966",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders",
+                    "69880f2e0813ba1fefbaa966"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1358"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"54e-dmJaZG3sDexO/BnFz+7D82b5miM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 07:54:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Order item found successfully!\",\n    \"orderDetails\": {\n        \"_id\": \"69880f2e0813ba1fefbaa966\",\n        \"items\": [\n            {\n                \"menuItem\": {\n                    \"_id\": \"6981be5dcd6c6400e237707c\",\n                    \"name\": \"Paneer Butter Masala\",\n                    \"description\": \"Rich and creamy curry made with soft paneer cubes.\",\n                    \"category\": \"Main Course\",\n                    \"price\": 240,\n                    \"ingredients\": [\n                        \"paneer\",\n                        \"butter\",\n                        \"tomato\",\n                        \"cream\",\n                        \"spices\"\n                    ],\n                    \"isAvailable\": true,\n                    \"preparationTime\": 28,\n                    \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n                    \"createdAt\": \"2026-02-03T09:22:37.515Z\",\n                    \"updatedAt\": \"2026-02-03T09:22:37.515Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 2,\n                \"price\": 240,\n                \"_id\": \"69880f2e0813ba1fefbaa967\"\n            },\n            {\n                \"menuItem\": {\n                    \"_id\": \"6981bd73cd6c6400e2377063\",\n                    \"name\": \"Chicken Noodles\",\n                    \"description\": \"Stir-fried noodles tossed with tender chicken pieces and flavorful sauces.\",\n                    \"category\": \"Appetizer\",\n                    \"price\": 120,\n                    \"ingredients\": [\n                        \"chicken\",\n                        \"noodles\",\n                        \"salt\",\n                        \"tomato sauce\",\n                        \"pepper\"\n                    ],\n                    \"isAvailable\": true,\n                    \"preparationTime\": 15,\n                    \"imageLink\": \"https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true\",\n                    \"createdAt\": \"2026-02-03T09:18:43.926Z\",\n                    \"updatedAt\": \"2026-02-03T09:18:43.926Z\",\n                    \"__v\": 0\n                },\n                \"quantity\": 1,\n                \"price\": 120,\n                \"_id\": \"69880f2e0813ba1fefbaa968\"\n            }\n        ],\n        \"totalAmount\": 600,\n        \"status\": \"Pending\",\n        \"customerName\": \"John Doe\",\n        \"tableNumber\": 3,\n        \"orderNumber\": \"ORD-230289\",\n        \"createdAt\": \"2026-02-08T04:21:02.226Z\",\n        \"updatedAt\": \"2026-02-08T04:21:02.226Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Order ID)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"items\": [\r\n      { \"menuItem\": \"6981be94cd6c6400e2377088\", \"quantity\": 5, \"price\": 140 }\r\n    ],\r\n    \"status\": \"Preparing\",\r\n    \"customerName\": \"Olivia Taylor\",\r\n    \"tableNumber\": 7\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders/69880f2e0813",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders",
+                    "69880f2e0813"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "51"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"33-/x4iCj9KLYyS6PxCenfLkFWtuzU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 07:55:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid Order ID (or) Order ID not found!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\":\"Preparing\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/orders/69880f2e0813ba1fefbaa966/status",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "orders",
+                "69880f2e0813ba1fefbaa966",
+                "status"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Response (status Updated)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\":\"Preparing\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders/69880f2e0813ba1fefbaa966/status",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders",
+                    "69880f2e0813ba1fefbaa966",
+                    "status"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "486"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e6-RcvMBRpYMUaJuYBIeUKMinTEJDg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:21:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Updated Order status successfully!\",\n    \"data\": {\n        \"_id\": \"69880f2e0813ba1fefbaa966\",\n        \"items\": [\n            {\n                \"menuItem\": \"6981be5dcd6c6400e237707c\",\n                \"quantity\": 2,\n                \"price\": 240,\n                \"_id\": \"69880f2e0813ba1fefbaa967\"\n            },\n            {\n                \"menuItem\": \"6981bd73cd6c6400e2377063\",\n                \"quantity\": 1,\n                \"price\": 120,\n                \"_id\": \"69880f2e0813ba1fefbaa968\"\n            }\n        ],\n        \"totalAmount\": 600,\n        \"status\": \"Preparing\",\n        \"customerName\": \"John Doe\",\n        \"tableNumber\": 3,\n        \"orderNumber\": \"ORD-230289\",\n        \"createdAt\": \"2026-02-08T04:21:02.226Z\",\n        \"updatedAt\": \"2026-02-10T08:21:12.448Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Order ID)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\":\"Preparing\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders/69880f2e081966/status",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders",
+                    "69880f2e081966",
+                    "status"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "51"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"33-/x4iCj9KLYyS6PxCenfLkFWtuzU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:22:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid Order ID (or) Order ID not found!\"\n}"
+            },
+            {
+              "name": "Not Found Response (invalid Staus sent)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"status\":\"Prep\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/orders/69880f2e0813ba1fefbaa966/status",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orders",
+                    "69880f2e0813ba1fefbaa966",
+                    "status"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "38"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"26-u1JGLWrIoPUOjdaIENHLoFNynS8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 08:24:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Invalid status sent in body!\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-Existing Routes",
+      "item": [
+        {
+          "name": "Bad Route",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://api-restaurant-admin.onrender.com/orderad-route",
+              "protocol": "https",
+              "host": [
+                "api-restaurant-admin",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "orderad-route"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Not Found Response (bad Route)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/orderad-route",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "orderad-route"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "39"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27-tkSHSyE/wzZVoXKJUIrPM904aSE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 10 Feb 2026 14:41:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"msg\": \"Bad route (or) No route found\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
