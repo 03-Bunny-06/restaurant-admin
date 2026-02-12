@@ -3,8 +3,9 @@ env.config({path: "./.env"});
 
 const express = require("express");
 const swaggerUi = require("swagger-ui-express");
+const YAML = require("yaml");
+const fs = require("fs");
 const path = require("path");
-const YAML = require("yamljs");
 const app = express();
 const bodyParser = require("body-parser");
 const menuRouter = require("./routes/menuRoutes.js");
@@ -13,7 +14,8 @@ const orderRouter = require("./routes/orderRoutes");
 const connectDb = require("./config/db.js");
 connectDb();
 
-const swaggerDocument = YAML.load(path.join(__dirname, "openapi.yaml"))
+const file = fs.readFileSync("openapi.yaml", "utf-8");
+const swaggerDocument = YAML.parse(file);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
