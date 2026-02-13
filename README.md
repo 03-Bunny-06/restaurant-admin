@@ -2,7 +2,12 @@
 
 A robust RESTful backend service for managing restaurant menus and orders. This API provides functionality for CRUD operations, searching, filtering, availability control, and status-tracked order handling.
 
-## 🚀 Key Features
+The API is fully documented using OpenAPI (Swagger), providing an interactive way to explore and test the endpoints.
+
+**Live Demo:** [https://blog-api-cc47.onrender.com](http://api-restaurant-admin.onrender.com)  
+**Live API Documentation:** [https://blog-api-cc47.onrender.com/api-docs](http://api-restaurant-admin.onrender.com/api-docs)
+
+## Features⚡
 
 -   **Menu Management:** Full CRUD (Create, Read, Update, Delete) functionality for menu items.
 -   **Order Handling:** Create new orders, retrieve order lists, view specific order details, and update order statuses.
@@ -13,14 +18,20 @@ A robust RESTful backend service for managing restaurant menus and orders. This 
 -   **Availability Control:** Easily toggle the availability of any menu item.
 -   **API Documentation:** Interactive API documentation powered by Swagger (OpenAPI) is available at the `/api-docs` endpoint.
 
-## 🛠️ Tech Stack
+## Tech Stack 🚀
 
--   **Backend:** Node.js, Express.js
--   **Database:** MongoDB with Mongoose ODM
--   **API Documentation:** Swagger UI, OpenAPI
--   **Environment Management:** Dotenv
+| Technology         | Description                                |
+| ------------------ | ------------------------------------------ |
+| **Node.js**        | JavaScript runtime environment             |
+| **Express.js**     | Web framework for building the REST API    |
+| **MongoDB**        | NoSQL database to store application data   |
+| **Mongoose**       | ODM library for MongoDB and Node.js        |
+| **dotenv**         | For managing environment variables         |
+| **Swagger UI**     | For generating interactive API documentation |
 
-## ⚙️ Getting Started
+## Getting Started ⚙️
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
@@ -28,7 +39,7 @@ A robust RESTful backend service for managing restaurant menus and orders. This 
 -   npm (Node Package Manager)
 -   MongoDB instance (local or cloud-based like MongoDB Atlas)
 
-### Installation & Setup
+### Installation & Setup 📦
 
 1.  **Clone the repository:**
     ```bash
@@ -63,9 +74,9 @@ A robust RESTful backend service for managing restaurant menus and orders. This 
 
 The server will start on the port specified in your `.env` file (or 8080 by default). You can access the API documentation at `http://localhost:8080/api-docs`.
 
-## 📖 API Endpoints
+## API Endpoints 🔗
 
-The base URL for the deployed API is: `https://api-restaurant-admin.onrender.com`
+The API is structured into two main routes that handles: `Menu` and `Order`.
 
 ### Menu API
 
@@ -74,7 +85,7 @@ Endpoints for managing restaurant menu items.
 | Method  | Endpoint                         | Description                                  |
 | :------ | :------------------------------- | :------------------------------------------- |
 | `GET`   | `/menu`                          | Get menu items with optional filtering.      |
-| `GET`   | `/menu/search`                   | Search for menu items by text query.         |
+| `GET`   | `/menu/search?`                   | Search for menu items by text query.         |
 | `POST`  | `/menu`                          | Create a new menu item.                      |
 | `GET`   | `/menu/:id`                      | Get a single menu item by its ID.            |
 | `PUT`   | `/menu/:id`                      | Update a menu item by its ID.                |
@@ -162,7 +173,7 @@ Updates the status of an existing order.
     }
     ```
 
-## 🗂️ Data Models
+## Data Models 🗂️
 
 ### MenuItem Schema
 
