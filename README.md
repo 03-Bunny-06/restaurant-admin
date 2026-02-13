@@ -89,7 +89,7 @@ The server will start on the port specified in your `.env` file (or 8080 by defa
     ingredients: [String],
     isAvailable: { type: Boolean, default: true },
     preparationTime: { type: Number, required: true },
-    imageLink : { type: String, default: '...' }
+    imageLink : { type: String, default: 'https://github.com/Kowshik-8055/restaurant-images/blob/main/default.png?raw=true' }
 }
 ```
 
