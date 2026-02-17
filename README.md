@@ -4,7 +4,7 @@ A robust RESTful backend service for managing restaurant menus and orders. This 
 
 The API is fully documented using OpenAPI (Swagger), providing an interactive way to explore and test the endpoints.
 
-**Live Demo:** [https://api-restaurant-admin.onrender.com](http://api-restaurant-admin.onrender.com)  
+**Live Demo:** [https://api-restaurant-admin.onrender.com](http://api-restaurant-admin.onrender.com/menu)  
 **Live API Documentation:** [https://api-restaurant-admin.onrender.com/api-docs](http://api-restaurant-admin.onrender.com/api-docs)
 
 ## Features⚡
