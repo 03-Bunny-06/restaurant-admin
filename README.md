@@ -140,3 +140,15 @@ The API is structured into two main routes that handles: `Menu` and `Order`. `Me
 | `GET`   | `/orders/:id`           | Get details of a single order by its ID.          |
 | `PATCH` | `/orders/:id/status`    | Update the status of an order.                    |
 
+## API Testing – Postman Collection 🧪
+
+- The repository includes a `collection.json` file exported from Postman.  
+- It contains structured test folders covering authentication, CRUD operations, protected routes, and error cases.  
+- Developers can import this collection directly into Postman to run predefined requests against the API.
+
+### Import Instructions
+
+1. Open Postman
+2. Click Import
+3. Load the `collection.json` file
+4. Start testing the endpoints
