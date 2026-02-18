@@ -27,6 +27,7 @@ The API is fully documented using OpenAPI (Swagger), providing an interactive wa
 | **MongoDB**        | NoSQL database to store application data   |
 | **Mongoose**       | ODM library for MongoDB and Node.js        |
 | **dotenv**         | For managing environment variables         |
+| **Postman**       | API endpoints testing        |
 | **Swagger UI**     | For generating interactive API documentation |
 
 ## Getting Started ⚙️
@@ -140,7 +141,7 @@ The API is structured into two main routes that handles: `Menu` and `Order`. `Me
 | `GET`   | `/orders/:id`           | Get details of a single order by its ID.          |
 | `PATCH` | `/orders/:id/status`    | Update the status of an order.                    |
 
-## API Testing – Postman Collection 🧪
+## API Testing with Postman 🧪
 
 - The repository includes a `collection.json` file exported from Postman.  
 - It contains structured test folders covering authentication, CRUD operations, protected routes, and error cases.  
