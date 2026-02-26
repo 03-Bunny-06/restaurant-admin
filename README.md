@@ -38,7 +38,7 @@ To get a local copy up and running, follow these simple steps.
 
 -   Node.js (v20.19.0 or higher)
 -   npm (Node Package Manager)
--   MongoDB instance (local or cloud-based like MongoDB Atlas)
+-   MongoDB instance (local or cloud-based service something like MongoDB Atlas)
 
 ### Installation & Setup 📦
 
